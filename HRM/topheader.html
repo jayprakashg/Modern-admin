@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+	<style type="text/css">
+		.hrm-header {
+			width: 100%;
+			height: 43px;
+			padding: 0 30px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #E3F2FD;
+		}
+
+		.hrm-blogo {
+			display: flex;
+			align-items: center;
+		}
+
+		.hrm-header .hrm-logo {
+			width: 130px;
+		}
+
+        .emp-search {
+            position: relative;
+        }
+
+            .emp-search input {
+                width: 100%;
+                height: 35px;
+                border: none;
+                outline: none;
+                padding: 10px;
+                font-size: 14px;
+                color: #333;
+                background: transparent;
+            }
+
+
+		.hrm-user-option, .hrm-blogo .back-to-home {
+			font-size: 16px;
+			width: 30px;
+			height: 30px;
+			background: #fff;
+			text-align: center;
+			border-radius: 50%;
+			line-height: 29px;
+		}
+
+		.hrm-blogo .back-to-home {
+			margin-left: 10px;
+		}
+		.emp-list {
+			width: 98%;
+			background-color: white;
+			position: absolute;
+			top: 36px;
+			border-radius: 12px;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+			display: none;
+			max-height: 230px;
+			overflow-y: scroll;
+		}
+
+		.emp-list ul li {
+			list-style: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			font-size: 14px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #eeeeee;
+		}
+
+		.emp-list ul li:hover {
+			background-color: #E3F2FD;
+		}
+
+		.emp-name {
+			width: 35%;
+		}
+
+		.emp-links {
+			display: flex;
+			width: 75%;
+			justify-content: space-around;
+			font-size: 11px;
+			align-items: center;
+		}
+
+		.emp-links a {
+			background-color: #f6fbff;
+			padding: 5px;
+			max-width: 80px;
+			border-radius: 50px;
+			height: fit-content;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: #333;
+		}
+
+		@media (max-width:1150px) {
+			.maxwidth {
+				width: 90%;
+			}
+		}
+
+        @media (max-width:600px) {
+            .emp-search .empl-search-box {
+                width: 30px;
+            }
+            .emp-search .empl-search-box input {
+                display:none;
+            }
+            .active-search {
+                position: absolute;
+                width: 75%;
+                top: 4px;
+                right: 10px;
+            }
+            .active-search .empl-search-box {
+                width: 100%;
+            }
+            .active-search .empl-search-box input {
+                display: block;
+            }
+        }
+		@media (max-width:567px) {
+
+			.hrm-header {
+				padding: 0 15px;
+			}
+
+			.hrm-header .hrm-logo {
+				width: 100px;
+			}
+		}
+		@media (max-width:400px) {
+            .hrm-header {
+                padding: 0 10px;
+            }
+		}
+	</style>
+</head>
+<body>
+	<div class="hrm-header shadow">
+		<div class="hrm-blogo">
+			<img class="hrm-logo" src="./img/hrmlogo.png" title="HRMTHread Logo">
+			<a href="#!" class="back-to-home shadow rounded-2xl" title="Back to home page"><i class="ri-home-3-line"></i></a>
+		</div>
+		<div class="flex items-center">
+			<div class="emp-search ml-2" id="search-div">
+				<div class="empl-search-box flex md:w-full lg:w-full bg-white emp-search-bar shadow rounded-2xl">
+					<input type="text" name="" id="searchInput" placeholder="Employee search..." onkeypress="ShowList()">
+					<i id="search-cicon" title="Search" class="flex items-center justify-center w-12 ri-search-line hrm-search cursor-ponter cursor-pointer"></i>
+				</div>
+				<div class="emp-list" id="empList">
+					<ul>
+						<li>
+							<div class="emp-name"><p>Jay prakash</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+						<li>
+							<div class="emp-name"><p>Dhruv Parmar</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+						<li>
+							<div class="emp-name"><p>Vishwajeet</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+						<li>
+							<div class="emp-name"><p>Vishwajeet</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+						<li>
+							<div class="emp-name"><p>Vishwajeet</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+						<li>
+							<div class="emp-name"><p>Vishwajeet</p></div>
+							<div class="emp-links">
+								<a href="#!">Attendance</a>
+								<a href="#!">jxikbbasiubcisdui</a>
+								<a href="#!">Leave</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="hrm-user-option shadow rounded-2xl ml-2">
+				<a href="#!" title="User option"><i class="ri-user-line"></i></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

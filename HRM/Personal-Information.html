@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="../view/hrmcommon.css" rel="stylesheet" />
+    <title>Personal Information</title>
+</head>
+
+<body class="bg-white">
+    <div class="flex-col flex justify-start px-4 items-center w-full">
+        <div class="flex flex-col gap-y-5 w-full py-5">
+            <div class="flex flex-col gap-y-3">
+                <div class="flex items-center w-full justify-start space-x-2 font-bold">
+                    <h2 class="font-bold">Current Address</h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div class="flex flex-col">
+                        <label for="flat" class="w-20">Flat</label>
+                        <input type="text" id="flat" name="flat"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Premise" class="w-20">Premise</label>
+                        <input type="text" id="Premise" name="Premise"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Road" class="w-20">Road</label>
+                        <input type="text" id="Road" name="Road"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Area" class="w-20">Area</label>
+                        <input type="text" id="Area" name="Area"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Town" class="w-20">Town</label>
+                        <input type="text" id="Town" name="Town"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Pincode" class="w-20">Pincode</label>
+                        <input type="text" id="Pincode" name="Pincode"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="State" class="w-20">State</label>
+                        <input type="text" id="State" name="State"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="Country" class="w-20">Country</label>
+                        <input type="text" id="Country" name="Country"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="flex flex-col gap-y-3">
+                <div class="flex items-center w-full justify-start space-x-2 font-bold">
+                    <h2>Permanent Address (</h2>
+                    <input id="accept" type="checkbox"
+                           class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                    <label for="accept" class="text-sm text-gray-900 ">same as current address )</label>
+                </div>
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div class="flex flex-col">
+                        <label for="FlatO" class="w-20">Flat</label>
+                        <input type="text" id="FlatO" name="FlatO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="PremiseO" class="w-20">Premise</label>
+                        <input type="text" id="PremiseO" name="PremiseO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="RoadO" class="w-20">Road</label>
+                        <input type="text" id="RoadO" name="RoadO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="AreaO" class="w-20">Area</label>
+                        <input type="text" id="AreaO" name="AreaO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="TownO" class="w-20">Town</label>
+                        <input type="text" id="TownO" name="TownO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="PincodeO" class="w-20">Pincode</label>
+                        <input type="text" id="PincodeO" name="PincodeO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="StateO" class="w-20">State</label>
+                        <input type="text" id="StateO" name="StateO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="CountryO" class="w-20">Country</label>
+                        <input type="text" id="CountryO" name="CountryO"
+                               class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full gap-y-3 py-4 border-t-2">
+            <div class="flex justify-start">
+                <h2 class="font-bold">Other Information</h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div class="flex flex-col justify-start gap-3">
+                    <label for="employeeName" class="w-full">Mobile</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col justify-start gap-3">
+                    <label for="employeeName" class="w-full">Birth Place</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col justify-start gap-3">
+                    <label for="employeeName" class="w-full">Phone No.</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Religion <i class="mandatory"></i></label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Emergency Contact No. -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-48">Emergency Contact No.</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Nationality Dropdown -->
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Nationality <i class="mandatory"></i></label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Official E-mail -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-49">Official E-mail</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Cast -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-full">Cast</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Personal E-Mail -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-48">Personal E-Mail</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Sub Caste -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-full">Sub Caste</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Blood Group Dropdown -->
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Blood Group <i class="mandatory"></i></label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Languages -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-full">Languages</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Marital Status Dropdown -->
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Marital Status <i class="mandatory"></i></label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Height -->
+                <div class="flex flex-col gap-3">
+                    <label for="employeeName" class="w-full">Height</label>
+                    <input type="text" id="employeeName" name="employeeName"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+
+                <!-- Weight -->
+                <div class="flex flex-col gap-3">
+                    <label for="weight" class="w-full">Weight</label>
+                    <input type="text" id="weight" name="weight"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <!-- Marriage Date -->
+                <div class="flex flex-col gap-3">
+                    <label for="marriageDate" class="w-48">Marriage Date</label>
+                    <input type="date" id="marriageDate" name="marriageDate"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- No Of Children -->
+                <div class="flex flex-col gap-3">
+                    <label for="noOfChildren" class="w-48">No Of Children</label>
+                    <input type="text" id="noOfChildren" name="noOfChildren"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Identification Mark -->
+                <div class="flex flex-col gap-3">
+                    <label for="identificationMark" class="w-48">Identification Mark</label>
+                    <input type="text" id="identificationMark" name="identificationMark"
+                           class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <!-- Highest Qualification Dropdown -->
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Highest Qualification <i class="mandatory"></i></label>
+                    <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Physically Handicap -->
+                <div class="flex flex-col gap-3">
+                    <label class="text-sm mt-3 font-medium text-gray-900">Physically Handicap:</label>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <input id="handicapYes" name="physicallyHandicap" type="radio" value="yes"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300" onclick="toggleDropdown()">
+                            <label for="handicapYes" class="ml-2 text-sm font-medium text-gray-900">Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="handicapNo" name="physicallyHandicap" type="radio" value="no"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300" onclick="toggleDropdown()">
+                            <label for="handicapNo" class="ml-2 text-sm font-medium text-gray-900">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physically Handicap Category Dropdown -->
+                <div class="relative flex flex-col gap-3 hidden" id="handicapCategory">
+                    <label id="handicapCategory-label" class="w-full inline-block text-l leading-6 text-gray-900">
+                        Physically Handicap Category
+                    </label>
+                    <button id="handicapCategory-dropdownButton" type="button"
+                            class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6"
+                            aria-haspopup="listbox" aria-expanded="false" aria-labelledby="handicapCategory-label">
+                        <span class="flex items-center">
+                            <span id="handicapCategory-selectedOption" class="ml-3 block truncate">
+                                Locomotive
+                                Disability
+                            </span>
+                        </span>
+                        <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <ul id="handicapCategory-dropdownMenu"
+                            class="absolute left-0 top-8 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden"
+                            tabindex="-1" role="listbox" aria-labelledby="handicapCategory-label">
+                            <li class="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-100 cursor-pointer"
+                                role="option" onclick="selectOption(this)">
+                                <div class="flex items-center">
+                                    <span class="ml-3 block truncate">Visual</span>
+                                </div>
+                            </li>
+                            <li class="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-100 cursor-pointer"
+                                role="option" onclick="selectOption(this)">
+                                <div class="flex items-center">
+                                    <span class="ml-3 block truncate">Hearing</span>
+                                </div>
+                            </li>
+                            <li class="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-100 cursor-pointer"
+                                role="option" onclick="selectOption(this)">
+                                <div class="flex items-center">
+                                    <span class="ml-3 block truncate">Locomotive</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

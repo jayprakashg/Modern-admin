@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="../view/hrmcommon.css" rel="stylesheet" />
+    <title>Passport Vehicle</title>
+</head>
+<body class="bg-white">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4">
+        <div>
+            <label for="first-name" class="block text-gray-700">Passport Number</label>
+            <input type="text" id="first-name" name="first-name" class="w-full p-2 h-10 border border-gray-300 mt-2 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex flex-col space-y-2">
+            <label for="lastReappointmentDate" class="block text-gray-700">Passport Issue Date</label>
+            <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="text-sm p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+        </div>
+        <div class="flex flex-col space-y-2">
+            <label for="lastReappointmentDate" class="block text-gray-700">Passport Expiry Date</label>
+            <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="text-sm p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+        </div>
+        <div class="flex flex-col gap-y-2">
+            <label for="PassportPlace" class="w-full">Passport Place Of Issue <i class="mandatory"></i></label>
+            <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                <option selected="">Please Select</option>
+                <option value="Rupay">Rupay</option>
+                <option value="Credit">Credit Cards</option>
+                <option value="Debit">Debit Cards</option>
+                <option value="Bank">Bank Transfer</option>
+            </select>
+        </div>
+
+
+
+        <div>
+            <label for="first-name" class="block text-gray-700">Vehicle Details</label>
+            <input type="text" id="first-name" name="first-name" class="w-full p-2 h-10 border border-gray-300 mt-2 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div>
+            <label for="first-name" class="block text-gray-700">Driving License No</label>
+            <input type="text" id="first-name" name="first-name" class="w-full p-2 h-10 border border-gray-300 mt-2 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex flex-col space-y-2">
+            <label for="lastReappointmentDate" class="block text-gray-700">Driving License Issue Date</label>
+            <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="text-sm p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+        </div>
+        <div class="flex flex-col space-y-2">
+            <label for="lastReappointmentDate" class="block text-gray-700">Driving License Expiry Date</label>
+            <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="text-sm p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label for="first-name" class="block text-gray-700">Professional Membership Details</label>
+            <input type="text" id="first-name" name="first-name" class="w-full p-2 h-10 border border-gray-300 mt-2 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex flex-col space-y-2">
+            <label for="lastReappointmentDate" class="block text-gray-700">EMT Registration Expiry Date</label>
+            <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="text-sm p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+        </div>
+
+    </div>
+
+
+    <div class="flex flex-col p-4 md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+        <div class="defaultCheckBox flex items-center">
+            <input id="ctl00_ContentPlaceHolder1_chkTwoWheelerLicense" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTwoWheelerLicense" class="mr-2">
+            <label for="ctl00_ContentPlaceHolder1_chkTwoWheelerLicense">Two Wheeler License</label>
+        </div>
+        <div class="defaultCheckBox flex items-center">
+            <input id="ctl00_ContentPlaceHolder1_chkThreeWheeler" type="checkbox" name="ctl00$ContentPlaceHolder1$chkThreeWheeler" class="mr-2">
+            <label for="ctl00_ContentPlaceHolder1_chkThreeWheeler">Three Wheeler</label>
+        </div>
+        <div class="defaultCheckBox flex items-center">
+            <input id="ctl00_ContentPlaceHolder1_chkFourWheeler" type="checkbox" name="ctl00$ContentPlaceHolder1$chkFourWheeler" class="mr-2">
+            <label for="ctl00_ContentPlaceHolder1_chkFourWheeler">Four Wheeler</label>
+        </div>
+    </div>
+
+
+</body> 
+</html>

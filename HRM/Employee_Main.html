@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="hrmcommon.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Employee Main</title>
+    <style type="text/css">
+                    .sidebar.close {
+                width: 55px;
+            }
+
+
+            .sidebar.close .logo-details .logo_name {
+                opacity: 0;
+            }
+            .sidebar.close .nav-links {
+                overflow: visible;
+            }
+
+            .sidebar .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+                .sidebar .nav-links li .icon-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .sidebar .nav-links li .icon-link .caret-down:before {
+                    font-size: 15px;
+                }
+               .sidebar.close .nav-links li .icon-link {
+                display: block
+                }
+                .sidebar .nav-links li i:before {
+                    font-size: 20px;
+                }
+
+            .sidebar .nav-links li.showMenu i.arrow {
+                transform: rotate(-180deg);
+            }
+
+            .sidebar.close .nav-links i.arrow {
+                display: none;
+            }
+                .sidebar .nav-links li a .link_name {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #afafaf;
+                    transition: all 0.4s ease;
+                }
+
+            .sidebar.close .nav-links li a .link_name {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .sidebar .nav-links li .sub-menu {
+                padding: 6px 6px 14px 80px;
+                margin-top: 0px;
+                /*background: #2e2e2e;*/
+                display: none;
+            }
+
+            .sidebar .nav-links li.showMenu .sub-menu {
+                display: block;
+            }
+
+        .close.sidebar .nav-links li .sub-menu a {
+            white-space: nowrap;
+        }
+
+        .sidebar .nav-links li .sub-menu a {
+            color: #c3c3c3;
+            font-size: 15px;
+            padding: 5px 0;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+            .sidebar .nav-links li .sub-menu a:hover {
+                opacity: 1;
+            }
+
+        .sidebar.close .nav-links li .sub-menu {
+            position: absolute;
+            left: 100%;
+            top: -10px;
+            margin-top: 0;
+            padding: 10px 20px;
+            border-radius: 0 6px 6px 0;
+            opacity: 0;
+            display: block;
+            pointer-events: none;
+            transition: 0s;
+        }
+
+        .sidebar.close .nav-links li:hover .sub-menu {
+            top: 0;
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+        }
+
+        .sidebar .nav-links li .sub-menu .link_name {
+            display: none;
+        }
+
+        .sidebar.close .nav-links li .sub-menu .link_name {
+            font-size: 14px;
+            opacity: 1;
+            display: block;
+        }
+
+        .sidebar .nav-links li .sub-menu.blank {
+            opacity: 1;
+            pointer-events: auto;
+            padding: 3px 20px 6px 16px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar .nav-links li:hover .sub-menu.blank {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sidebar .profile-details {
+            padding: 5px 0;
+        }
+
+        .sidebar.close .profile-details {
+            background: none;
+        }
+
+        .sidebar.close .profile-details {
+            width: 55px;
+        }
+
+        .sidebar .profile-details .profile-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .profile-details img {
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 0 4px 0 4px;
+            transition: all 0.5s ease;
+        }
+        .sidebar.close .profile-details img {
+            padding: 8px;
+        }
+        .sidebar .profile-details .profile_name,
+        .sidebar .profile-details .job {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .sidebar.close .profile-details i,
+        .sidebar.close .profile-details .profile_name,
+        .sidebar.close .profile-details .job {
+            display: none;
+        }
+        .sidebar .profile-details .job {
+            font-size: 12px;
+        }
+        .home-section {
+            position: relative;
+            background: #E4E9F7;
+            height: 100vh;
+            left: 260px;
+            width: calc(100% - 260px);
+            transition: all 0.5s ease;
+            padding: 12px;
+        }
+        .sidebar.close ~ .home-section {
+            left: 55px;
+            width: calc(100% - 55px);
+        }
+        .home-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .home-section .home-content .bx-menu,
+        .home-section .home-content .text {
+            color: #11101d;
+            font-size: 35px;
+        }
+
+        .home-section .home-content .bx-menu {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .home-section .home-content .text {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 400px) {
+                .sidebar.close {
+                    width: 55px;
+                }
+                .sidebar.close .profile-details {
+                    background: none;
+                }
+                .sidebar.close .profile-details {
+                    width: 55px;
+                }
+            .home-section {
+                left: 240px;
+                width: calc(100% - 240px);
+            }
+            .sidebar.close ~ .home-section {
+                left: 55px;
+                width: calc(100% - 55px);
+            }
+        }
+        .font-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="down dark:bg-slate-900">
+    <div class="Employee-main pl-14">
+        <div id="submenu-container">
+                <div class="sidebar close fixed top-0 left-0 h-full w-[260px] bg-[#0a0a0a] z-[99] transition-all duration-500">
+        <div class="logo-details flex items-center h-[60px] w-full">
+            <i class='menu-bar open-menu-icon font-icon text-[30px] text-white h-[50px] min-w-[55px] text-center leading-[50px]'></i>
+            <span class="logo_name text-[22px] text-white font-semibold transition-opacity duration-300 delay-100">Side menu</span>
+        </div>
+        <ul class="nav-links h-full pb-[150px] overflow-auto">
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class='dashboard h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300'></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Dashboard</span>
+                    </a>
+                    <i class='leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]'></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a href="#">Dashboard 1</a></li>
+                    <li><a href="#">Dashboard 2</a></li>
+                    <li><a href="#">Dashboard 3</a></li>
+                </ul>
+            </li>
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class="user h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Employee Information</span>
+                    </a>
+                    <i class="leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]"></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">General Information</a></li>
+                    <li><a href="#">Other Information</a></li>
+                    <li><a href="#">Personal Information</a></li>
+                    <li><a href="#">KYC Detail</a></li>
+                    <li><a href="#">Payment Information</a></li>
+                    <li><a href="#">Upload Image</a></li>
+                    <li><a href="#">On Boarding</a></li>
+                    <li><a href="#">Employee Confirmation History</a></li>
+                </ul>
+            </li>
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class="humanresource h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Human Resource Information</span>
+                    </a>
+                    <i class="leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]"></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Passport Vehicle</a></li>
+                    <li><a href="#">Qualification</a></li>
+                    <li><a href="#">Work Experience</a></li>
+                    <li><a href="#">Family Member</a></li>
+                    <li><a href="#">Hobbies</a></li>
+                    <li><a href="#">Achivements</a></li>
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Attachments</a></li>
+                    <li><a href="#">Vaccination Info</a></li>
+                    <li><a href="#">Employee Contract</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="UDF h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">UDF</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">UDF</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="asset h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Assets</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Assets</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="employee-remark h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Employee Remark</span>
+                </a>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Employee Remark</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="late-management h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Late Managements and issuals</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Late Managements and issuals</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="target-comm h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Target/Commitments</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Target/Commitments</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="disciplinary h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Disciplinary Records</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Disciplinary Records</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="visa-request h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Visa Request</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Visa Request</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="calender h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Calender</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Calender</a></li>
+                </ul>
+            </li>
+            <li class="profile-details fixed bottom-0 flex items-center justify-between p-3 w-[260px] transition-all duration-500 bg-slate-700">
+                <div class="profile-content flex items-center">
+                    <img src="./img/user-pic.jpg" alt="profileImg" class="h-[45px] w-[45px] object-cover rounded-lg bg-slate-700 transition-all duration-500">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name text-white text-[18px] font-semibold">Prem Shahi</div>
+                    <div class="job text-white text-[12px]">Web Designer</div>
+                </div>
+                <i class='logout leading-[50px] text-center h-[50px] min-w-[55px] text-[#afafaf]'></i>
+            </li>
+        </ul>
+    </div>
+        </div>
+        <div class="hrm-header shadow relative dark:bg-slate-700">
+            <div class="hrm-blogo">
+                <img class="hrm-logo" src="./img/hrmlogo.png" title="HRMTHread Logo">
+                <a href="#!" data-tooltip="Back to home" data-direction="bottom" class="back-to-home w-7 h-7 flex items-center justify-center relative shadow rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 backhome font-size-16 dark:text-slate-400">
+                </a>
+            </div>
+            <div class="flex items-center search-user-div">
+                <div class="emp-search ml-2" id="search-div">
+                    <div class="empl-search-box flex md:w-full lg:w-full bg-white dark:bg-slate-600 emp-search-bar shadow rounded-3xl">
+                        <input type="text" name="" id="searchInput" placeholder="Employee search..." onclick="ShowList()">
+                        <span id="search-cicon" data-tooltip="Search" data-direction="right" class="flex items-center justify-center w-12 hrm-search cursor-ponter cursor-pointer search font-size-16 dark:text-slate-400"></span>
+                    </div>
+                    <div class="emp-list w-full bg-white dark:bg-slate-600 absolute rounded-xl top-9 shadow z-[99]" id="empList">
+                        <ul>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Jay prakash</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Dhruv Parmar</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="user-option-right flex items-center gap-2 ml-2">
+                    <a id="notifications" data-tooltip="Notifications" data-direction="bottom" class="notify bell w-7 h-7 flex items-center justify-center relative shadow rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 font-size-16 dark:text-slate-400" href="#!">
+                        <span class="w-1.5 h-1.5 flex bg-green-600 rounded-full absolute top-2 right-1.5"></span>
+                    </a>
+                    <a id="UserOption" data-tooltip="User" data-direction="bottom" class="hrm-user-option w-7 h-7 flex items-center justify-center relative shadow-md rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 font-size-16 dark:text-slate-400 border dark:border-slate-600" onclick="" href="#!">
+                        <img class="rounded-full" src="./img/user-pic.jpg" alt="Profile pic">
+                    </a>
+                </div>
+                <!--User Profile section-->
+                <div id="UserWrap" class="profile-page fixed top-0 bg-white dark:bg-slate-900 shadow-lg h-full">
+                    <section class="relative block h-60">
+                        <a id="userhide" href="#!" class="userwrapcd text-sm text-gray-300 hover:text-gray-500 absolute top-2 left-2 closed z-10"></a>
+                        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
+          ">
+                            <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+                        </div>
+                    </section>
+                    <section class="relative pt-16 pb-0">
+                        <div class="container mx-auto px-2 lg:px-4">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white dark:bg-slate-900 w-full rounded-lg -mt-64">
+                                <div class="grid grid-cols-1">
+                                    <div class="w-full flex justify-center">
+                                        <div class="relative">
+                                            <img alt="..." src="./img/user-pic.jpg" style="max-width:70px;" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-8 -ml-18 lg:-ml-8">
+                                        </div>
+                                    </div>
+                                    <div class="w-full justify-center ">
+                                        <div class="flex py-4 px-4 mt-12">
+                                            <div class="user-info">
+                                                <h3 class="user-name text-lg font-semibold leading-normal text-blueGray-700 dark:text-white">
+                                                    Jenna Stones
+                                                </h3>
+                                                <div class="user-role text-sm leading-normal mt-0 text-blueGray-400 uppercase dark:text-slate-400">
+                                                    Programmer
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex py-4 px-2 lg:px-4 bg-gray-100 dark:bg-slate-800">
+                                            <div class="usermoredetail" id="UserMoreDetails">
+                                                <ul>
+                                                    <li><span id="lblEmployeeBranch" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Branch :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Mumbai</span></span></li>
+                                                    <li><span id="lblEmployeeGrade" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Grade :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">SA-04</span></span></li>
+                                                    <li><span id="lblEmployeeDepartment" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Department :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Development</span></span></li>
+                                                    <li><span id="lblEmployeeReporting" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Reporting :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Pravin Umarao Rajput  </span></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex justify-center">
+                                        <div class="w-full flex items-center justify-between py-6 px-3 mt-0">
+                                            <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
+                                                Switch To Old
+                                            </button>
+                                            <div class="theme-bg text-2xl" title="Theme">
+                                                <div class="flex flex-row justify-between toggle">
+                                                    <label for="dark-toggle" class="flex items-center cursor-pointer">
+                                                        <div class="relative">
+                                                            <input type="checkbox" name="dark-mode" id="dark-toggle" class="checkbox hidden">
+                                                            <div class="block border dark:border-slate-700 border-gray-700 w-14 h-8 rounded-full"></div>
+                                                            <div class="flex items-center justify-center dot absolute left-1 dark:left-7 top-1 dark:bg-slate-800 bg-gray-700 w-6 h-6 rounded-full transition theme-light theme-dark font-size-16 text-white dark:text-slate-400"></div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="close_sin grid">
+                                            <button id="logofflink" type="button" class="sign-out w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                Log Off <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                            </button>
+                                            <a class="forgotpass w-full py-2 underline cursor-pointer text-gray-700 dark:text-slate-400 text-sm hover:text-pink-500" id="forgotPass">Change Password <i class="fa fa-key pl-2" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!---Notification section--->
+                <div id="notifywrap" class="notifywrapper max-w-sm mx-auto fixed top-0 bg-white dark:bg-slate-900 shadow-lg h-full z-[100]">
+                    <div class="flex items-center justify-between p-4 shadow dark:shadow-lg bg-white dark:bg-slate-800 w-full absolute top-0 right-0 z-[99]">
+                        <h2 class="text-lg font-semibold flex items-center gap-2 dark:text-white">Notifications <span class="flex items-center justify-center w-8 h-8 rounded-full text-sm text-gray-500 dark:text-slate-400 bg-gray-100 dark:bg-slate-700 align-middle">2</span></h2>
+                        <a id="notifyclose" href="#!" class="notifybtn closed text-gray-400 dark:text-slate-400 hover:text-gray-500"></a>
+                    </div>
+                    <div class="divide-y dark:divide-slate-700 h-lvh max-h-max overflow-auto pt-16">
+                        <!-- Notification 1 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Fleur</strong> commented in <span class="text-pink-500">Dashboard 2.0</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 3:12 PM - 2 hours ago</p>
+                                <p class="mt-2 text-sm dark:text-slate-400 bg-gray-100 dark:bg-slate-700 p-2 rounded-lg">Really love this approach. I think this is the best solution for the document sync issue.</p>
+                            </div>
+                        </div>
+                        <!-- Notification 2 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Lily-Rose</strong> followed you</p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 3:04 PM - 2 hours ago</p>
+                            </div>
+                        </div>
+                        <!-- Notification 3 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Julius</strong> invited you to <span class="text-pink-500">Blog design</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 2:22 PM - 3 hours ago</p>
+                                <div class="mt-2 flex space-x-2">
+                                    <button class="px-3 py-1 bg-pink-500 text-white text-sm rounded-lg">Accept</button>
+                                    <button class="px-3 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-400 text-sm rounded-lg">Decline</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Notification 4 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Adrianna</strong> shared a file in <span class="text-pink-500">Dashboard 2.0</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 1:40 PM - 4 hours ago</p>
+                                <div class="mt-2 flex items-center space-x-2">
+                                    <p class="text-sm dark:text-slate-400">Prototype recording 01.mp4</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More notifications here... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Employee-wrap w-full py-3 px-3 sm:py-5 sm:px-5">
+            <div class="w-full bg-profile bg-white dark:bg-slate-800 shadow rounded-lg">
+                <div class="w-full flex items-center py-3 hrm-emp-wrap">
+                    <div class="w-36">
+                        <div class="flex justify-center">
+                            <div class="rounded-full h-16 w-16 flex items-center justify-center bg-pink-200 relative">
+                                <span class="text-pink-500 font-semibold text-2xl hidden">J</span>
+                                <img class="rounded-full" src="./img/user-pic.jpg" alt="Profile pic" />
+                                <div data-tooltip="Upload Photo" data-direction="bottom" class="absolute bottom-0 rounded-full h-7 w-7 upload-img bg-gray-300 dark:bg-slate-600 rounded-full flex items-center justify-center -m-5 cursor-pointer camera font-size-16 dark:text-slate-400"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col items-start gap-3">
+                        <div class="EmployeeNamedata pt-3 sm:pt-0 md:pt-0 flex items-center">
+                            <span class="text-lg font-semibold dark:text-white">Mr. Himmat Chasmawala</span>
+                            <div data-tooltip="Edit Profile" data-direction="right" class="w-8 h-8 flex items-center justify-center ml-2 bg-gray-100 hover:bg-pink-100 dark:hover:bg-slate-700 rounded-full dark:bg-slate-600">
+                                <button id="General-Information" data-page="General-Information.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit font-size-16">Edit</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="space-y-1">
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Employee Code: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">3</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Attendance Code: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">2</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Reporting To: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">Bharti Mehra</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Location: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">Gautam Nagar</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Branch Name: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">Nahur</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm dark:text-slate-400">Designation: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">Officer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between w-full hrm-menu-bg bg-white dark:bg-slate-800 shadow rounded-lg h-12 leading-10 mt-5 py-2 relative">
+                <ul class="tabs-nav flex gap-3 hrm-menulist-mbar">
+                    <li class="hrm-li common commontab p-1.5 tab-active" style="padding-left: 0.25rem;">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="common">General Information</a>
+                    </li>
+                    <li class="hrm-li udf p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="udf">UDF</a>
+                    </li>
+                    <li class="hrm-li assets p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="assets">Assets</a>
+                    </li>
+                    <li class="hrm-li mylett p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="mylett">Letters</a>
+                    </li>
+                    <li class="hrm-li target p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="target">Target</a>
+                    </li>
+                    <li class="hrm-li target p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="disciplinaryrecords">Disciplinary Records</a>
+                    </li>
+                    <li class="hrm-li Visarequest p-1.5">
+                        <a href="javascript:void(0)" class="text-black-600 hover:text-black-800 px-2 dark:text-slate-400" data-tab="visarequest">Visa Request</a>
+                    </li>
+                </ul>
+                <div class="absolute top-2.5 right-0.5 w-8 h-8 flex items-center justify-center bg-white dark:bg-slate-500 dark:text-slate-300 rounded-full hrm-menu-mbar hidden mr-2" id="hrm-information"></div>
+            </div>
+
+            <div id="common" class="tab-content rounded-lg w-full mt-5">
+                <!-- General Information content here -->
+                <!-- Important Dates -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 px-4 rounded-lg">
+                    <div class="flex justify-between items-center pb-4 border-b dark:border-slate-600">
+                        <h2 class="text-lg font-semibold dark:text-white">Important Dates</h2>
+                        <div data-tooltip="General Information" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="General-Information" data-page="General-Information.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">General Information</button>
+                        </div>
+                    </div>
+                    <!-- First Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 mt-5">
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Birth Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">31-May-1983</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Joining Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">02-Jan-2009</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Probation Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">NA</span>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Confirmation Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">NA</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Scheduled Exit Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">23-Jul-2024</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Scheduled Exit Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">23-Jul-2024</span>
+                        </div><div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Exit Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">NA</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm dark:text-slate-400">Exit Date</span>
+                            <span class="text-gray-700 dark:text-slate-300">NA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+
+                    <!-- Personal Information Header -->
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-lg font-semibold dark:text-white">Personal Information</h2>
+                        <div data-tooltip="Personal Information" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Personal-Information" data-page="Personal-Information.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Personal Information</button>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information Content -->
+                    <div class="flex flex-col gap-6 mt-4">
+                        <div class="p-0 md:p-4 lg:p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 mt-5">
+                                <!-- Personal Email -->
+                                <div class="w-full md:w-1/3 lg:w-1/3">
+                                    <span class="text-gray-600 text-sm dark:text-slate-400">Personal Email</span>
+                                    <div class="mt-1 personalemailbrake">
+                                        <span class="text-gray-700 dark:text-slate-300">abhishek.singh@sensysindia.com</span>
+                                    </div>
+                                </div>
+                                <!-- Blood Group -->
+                                <div class="w-full md:w-1/3 lg:w-1/3">
+                                    <span class="text-gray-600 text-sm dark:text-slate-400">Blood Group</span>
+                                    <div class="mt-1">
+                                        <span class="text-gray-700 dark:text-slate-300">B+</span>
+                                    </div>
+                                </div>
+                                <!-- Marital Status -->
+                                <div class="w-full md:w-1/3 lg:w-1/3">
+                                    <span class="text-gray-600 text-sm dark:text-slate-400">Marital Status</span>
+                                    <div class="mt-1">
+                                        <span class="text-gray-700 dark:text-slate-300">Married</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4 mt-5">
+                            <!-- Current Address Box -->
+                            <div class="shadow flex flex-col rounded-md border dark:border-slate-600 gap-y-2 p-4">
+                                <h3 class="text-lg font-semibold mb-4 border-b dark:border-slate-600 dark:text-white">Current Address</h3>
+                                <div class="space-y-4">
+                                    <!-- Flat -->
+                                    <div class="flex justify-between border-b dark:border-slate-600 items-center hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Flat</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">RE160003</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Premise -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Premise</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">Gandhi</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Road -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Road</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">90feet</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Area -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Area</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">Gautam Nagar</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Town -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Town</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">Andheri</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pincode -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Pincode</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">835410</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- State -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">State</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">Maharashtra</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Country</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">Bharat</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Permanent Address Box -->
+                            <div class="shadow flex flex-col rounded-md border dark:border-slate-600 gap-y-2 p-4">
+                                <h3 class="text-lg font-semibold mb-4 border-b dark:border-slate-600 dark:text-white">Permanent Address</h3>
+                                <div class="space-y-4">
+                                    <!-- Flat -->
+                                    <div class="flex justify-between border-b dark:border-slate-600 items-center hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Flat</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Premise -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Premise</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Road -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Road</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Area -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Area</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Town -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Town</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pincode -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Pincode</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- State -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">State</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="flex justify-between items-center border-b dark:border-slate-600 hrm-info-current">
+                                        <span class="text-gray-600 text-sm dark:text-slate-400">Country</span>
+                                        <div class="form-box">
+                                            <span class="text-gray-900 dark:text-slate-300">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Other Information -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <!-- Other Information Header -->
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-lg font-semibold dark:text-white">Other Information</h2>
+                        <div data-tooltip="Other Information" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Other-Information" data-page="Other-Information.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Other Information</button>
+                        </div>
+                    </div>
+
+                    <!-- Other Information Content -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 mt-5">
+                        <!-- Column 1 -->
+                        <div class="flex flex-col rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Date of joining(Group)</h1>
+                                <span class="text-gray-700 dark:text-slate-300">25/04/2019</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Last Reporting day</h1>
+                                <span class="text-gray-700 dark:text-slate-300">25/04/2020</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Gratuity Scheme</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Date Of Gratuity Scheme</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Gratuity Trust ID</h1>
+                                <span class="text-gray-700 dark:text-slate-300">12354</span>
+                            </div>
+                            <div class="flex flex-row w-full gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">SA Scheme</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                        </div>
+                        <!-- Column 2 -->
+                        <div class="flex flex-col rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Date Of SA Scheme</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Weekly Off Override</h1>
+                                <span class="text-gray-700 dark:text-slate-300">Saturday</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Notice Period (in days)</h1>
+                                <span class="text-gray-700 dark:text-slate-300">10</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Payroll Calculation Basis</h1>
+                                <span class="text-gray-700 dark:text-slate-300">AMD</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Ticket No</h1>
+                                <span class="text-gray-700 dark:text-slate-300">563546</span>
+                            </div>
+                            <div class="flex flex-row w-full gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Export Code</h1>
+                                <span class="text-gray-700 dark:text-slate-300">IBFS112</span>
+                            </div>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="flex flex-col rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Swap Card No</h1>
+                                <span class="text-gray-700 dark:text-slate-300">5556</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Employee Group Code</h1>
+                                <span class="text-gray-700 dark:text-slate-300">69</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Freeze Date</h1>
+                                <span class="text-gray-700 dark:text-slate-300">29/04/2024</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Freeze Reason</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b border-gray-300 dark:border-slate-600 gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Temp Period in Months</h1>
+                                <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full gap-x-3">
+                                <h1 class="w-64 text-gray-600 text-sm dark:text-slate-400">Training Months</h1>
+                                <span class="text-gray-700 dark:text-slate-300">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6  mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Payment Information</span>
+                        <div data-tooltip="Payment Information" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="PaymentInformationBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Payment Information</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="PaymentInformation">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Payment Mode: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">BANK</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Bank Name: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">CanaraBranch</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Bank Account Number: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">EMP10ACCOUNT</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Transfer Ratio.: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Status: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="PaymentInformationAdd" data-page="Payment-Information.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- KYC -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">KYC</span>
+                        <div data-tooltip="KYC Details" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="KYCDetailsBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">KYC Details</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="KYCDetails">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full pb-3">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">KYC Type: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">PAN Card</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full pb-3">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Document Number: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">ALLPD0760G</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full pb-3">
+                                <h1 class="w-49 text-gray-600 text-sm dark:text-slate-400">Expiry Date: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Add more KYC sections as necessary -->
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="KYCDetailsAdd" data-page="KYC-Details.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Image -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Upload Image</span>
+                        <div data-tooltip="Upload Image" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="UploadImageBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Upload Image</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 w-full py-4" id="UploadImage">
+                        <div class="flex justify-around rounded-md border border-gray-200 dark:border-slate-600 gap-y-2 p-2 w-full flex-col md:flex-row lg:flex-row">
+                            <div class="w-1/5 text-center items-center flex justify-center">
+                                <img src="https://cdn-icons-png.freepik.com/512/7718/7718888.png" alt="" class="w-20 items-center">
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex w-full items-center">
+                                    <h1 class="text-gray-600 text-s pr-5 dark:text-slate-400">IsDefault :</h1>
+                                    <span class="text-sm flex-grow text-right break-all dark:text-slate-300">UDFN001</span>
+                                </div>
+                                <div class="flex w-full items-center">
+                                    <h1 class="text-gray-600 text-s pr-5 dark:text-slate-400">Face Registration Date :</h1>
+                                    <span class="text-sm flex-grow text-right dark:text-slate-300">UDT</span>
+                                </div>
+                                <div class="flex w-full items-center">
+                                    <h1 class="text-gray-600 text-s pr-5 dark:text-slate-400">From Face API :</h1>
+                                    <span class="text-sm flex-grow text-right dark:text-slate-300">UDT</span>
+                                </div>
+                                <div class="flex w-full items-center">
+                                    <h1 class="text-gray-600 text-s pr-5 dark:text-slate-400">Status :</h1>
+                                    <span class="text-sm flex-grow text-right dark:text-slate-300">UDT</span>
+                                </div>
+                                <div class="flex space-x-2 pt-2 EditGroup">
+                                    <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                        <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                    </a>
+                                    <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                        <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="UploadImageAdd" data-page="Upload-Image.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- On Boarding -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">On Boarding</span>
+                        <div data-tooltip="On Boarding" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="On-Boarding" data-page="On-Boarding.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">On Boarding</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 mt-5">
+                        <!-- First Column -->
+                        <div class="flex flex-col rounded-md border border-gray-200 dark:border-slate-600 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Resigned EmployeeCode</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">25454</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Interviewers Employeecode</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">25454</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Business Interviewers Name</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Adad</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Business Interviewers Designation</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Business Interviewers Contact No.</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">45847322254</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Previous Experience Month</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                        </div>
+
+                        <!-- Second Column -->
+                        <div class="flex flex-col rounded-md border border-gray-200 dark:border-slate-600 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Sub Product</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Grade/Level</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Band</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Costcenter Code</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">12254</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Channel Name</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Resource Type</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                        </div>
+
+                        <!-- Third Column -->
+                        <div class="flex flex-col rounded-md border border-gray-200 dark:border-slate-600 gap-y-2 p-4">
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Previous Experience Month</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Current Industry</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Application Status</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Sub Location Foresic</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 border-b dark:border-slate-600 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">OTC Code</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="flex flex-row w-full pb-2 items-center gap-x-3">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Recruitment Source</h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">N/A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passport/Vehicle -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Passport/Vehicle</span>
+                        <div data-tooltip="Passport/Vehicle" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Passport-Vehicle" data-page="Passport-Vehicle.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Passport/Vehicle</button>
+                        </div>
+                    </div>
+                    <!-- First Column -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 border rounded-md p-3 mt-5 shadow dark:border-slate-600">
+                        <div class="md:border-r lg:border-r pr-4 dark:border-slate-600">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Number: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">125546521214</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Issue Date:</span>
+                                    <span class="text-gray-700 dark:text-slate-300">11/02/2020</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Expiry Date: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">07/05/2022 </span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Place of Issue : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:border-r lg:border-r pr-4 dark:border-slate-600">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Vehicle Details : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License No :</span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License Issue Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">20/09/2024</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License Expiry Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">23/01/1992</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Two Wheeler License : </span>
+                                    <span class="w-6 h-6 rounded-full bg-green-100 dark:bg-slate-500 text-green-500 dark:text-green-400 flex items-center justify-center hrmEdit Yescheck">Yes</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Professional Membership Details :</span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">EMT Registration Expiry Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">20/09/2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Column -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 border rounded-md p-3 mt-5 shadow dark:border-slate-600">
+                        <div class="md:border-r lg:border-r pr-4 dark:border-slate-600">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Number: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">125546521214</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Issue Date:</span>
+                                    <span class="text-gray-700 dark:text-slate-300">11/02/2020</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Expiry Date: </span>
+                                    <span class="text-gray-700 dark:text-slate-300">07/05/2022 </span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Passport Place of Issue : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:border-r lg:border-r pr-4 dark:border-slate-600">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Vehicle Details : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License No :</span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License Issue Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">20/09/2024</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Driving License Expiry Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">23/01/1992</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full">
+                            <div class="space-y-2">
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Three Wheeler License : </span>
+                                    <span class="w-6 h-6 rounded-full bg-green-100 dark:bg-slate-500 text-green-500 dark:text-green-400 flex items-center justify-center hrmEdit Yescheck">Yes</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">Professional Membership Details :</span>
+                                    <span class="text-gray-700 dark:text-slate-300">N/A</span>
+                                </div>
+                                <div class="w-full flex items-center gap-3">
+                                    <span class="w-49 text-gray-600 dark:text-slate-400 text-sm">EMT Registration Expiry Date : </span>
+                                    <span class="text-gray-700 dark:text-slate-300">20/09/2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Qualification -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Qualification</span>
+                        <div data-tooltip="Qualification" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="QualificationBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Qualification</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="Qualification">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">School/College: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">varthak College</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Board/University: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Mumbai University</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Qualification: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">B.E</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Passout</span>
+                            </div>
+
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="QualificationAdd" data-page="Qualification.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Work Experience</span>
+                        <div data-tooltip="Work Experience" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Work-ExperienceBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Work Experience</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="Work-Experience">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Employer: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Software Developer</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">From Period: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">20/02/2022</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">To Period: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">20/03/2024</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Excellent</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Total Exp: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">1 Year</span>
+                            </div>
+
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="Work-ExperienceAdd" data-page="Work-Experience.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Members -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Family Members</span>
+                        <div data-tooltip="Family Members" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Family-MembersBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Family Members</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="Family-Members">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Name: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Heer</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Relationship : </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Wife</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Emergency Contact No.: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">PF Nominee: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">PF Nominee Share: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="Family-MembersAdd" data-page="Family-Members.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hobbies -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Hobbies</span>
+                        <div data-tooltip="Hobbies" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="HobbiesBtn" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Hobbies</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5" id="Hobbies">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Hobby: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Cycling</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Remarks </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+
+                            <div class="flex space-x-2 EditGroup">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start AddGroup">
+                            <button id="HobbiesAdd" data-page="Hobbies.html" data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Achievement</span>
+                        <div data-tooltip="Achievements" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Achievements" data-page="Achievements.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Achievements</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Date of Achievement: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">10/02/2019</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Achievement: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">MERN</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Achievement Remarks: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Date of Achievement: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">10/08/2019</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Achievement: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">AIML</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Achievement Remarks: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Status: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">0</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start">
+                            <div data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Insurance -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Insurance</span>
+                        <div data-tooltip="Insurance" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Insurance" data-page="Insurance.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Insurance</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Policy No.: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">1</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Policy Date: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Policy Age: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">60</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Coverage Amount: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">53114</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Premium: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-200 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-500 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-200 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start">
+                            <div data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activities -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Activities</span>
+                        <div data-tooltip="Activities" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Activities" data-page="Activities.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Activities</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-1 w-full gap-2">
+                                <div class="grid grid-cols-1 rounded-md gap-1 w-full font-medium">
+                                    <span class="text-sm dark:text-white">Induction Activity</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-2">
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Induction Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Induction</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Induction Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Induction</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Induction Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Induction</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-1 w-full gap-2">
+                                <div class="grid grid-cols-1 rounded-md gap-1 w-full font-medium">
+                                    <span class="text-sm dark:text-white">Exit Activity</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-2">
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Exit Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Exit</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Exit Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Exit</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-1 p-2 w-full h-auto md:h-16 lg:h-16">
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Exit Activity: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">Employee Exit</span>
+                                    </div>
+
+                                    <div class="flex gap-x-2 flex-col md:flex-row lg:flex-row">
+                                        <h1 class="w-49 text-gray-600 dark:text-slate-400 text-xs">Date of Completion: </h1>
+                                        <span class="text-sm flex-grow text-left break-all dark:text-slate-300">09-01-2005</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attachments -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Attachments</span>
+                        <div data-tooltip="Attachments" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Attachments" data-page="Attachments.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Attachments</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Attachments: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Cycling</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Description: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">N/A</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">FileName: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Stored In Zip Format: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-300 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-300 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start">
+                            <div data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-700 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Vaccination Info -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Vaccination Info</span>
+                        <div data-tooltip="Vaccination" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Vaccination" data-page="Vaccination.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Vaccination</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Vaccination Type Name: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">Covisheild</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Date Of Vaccination: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">10/03/2020</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">FileName: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-300 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-300 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3 justify-center md:justify-start lg:justify-start">
+                            <div data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed rounded-full dark:border-slate-600 hover:bg-pink-100 dark:hover:bg-slate-700 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employee Contract -->
+                <div class="shadow bg-white dark:bg-slate-800 py-6 mt-5 px-4 rounded-lg">
+                    <div class="text-lg font-semibold pb-4 border-b dark:border-slate-600 flex justify-between items-center">
+                        <span class="dark:text-white">Employee Contract</span>
+                        <div data-tooltip="Employee Contract" data-direction="left" class="w-10 h-10 flex items-center justify-center bg-pink-100 dark:bg-slate-700 rounded-full ringEffect">
+                            <button id="Employee-Contract" data-page="Employee-Contract.html" class="w-full h-full flex items-center justify-center text-pink-500 hrmEdit Edit">Employee Contract</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 mt-5">
+                        <div class="grid grid-cols-1 rounded-md border dark:border-slate-600 gap-y-2 p-3">
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Contract-Date of Start: </h1>
+                                <span class="text-sm flex-grow text-left dark:text-slate-300">10/03/2020</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Contract-Date of Termination: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">10/03/2022</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Comment: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">test</span>
+                            </div>
+                            <div class="grid grid-cols-2 w-full">
+                                <h1 class="w-49 text-gray-600 dark:text-slate-400 text-sm">Contract No: </h1>
+                                <span class="text-sm flex-grow text-left break-all dark:text-slate-300">842546842145</span>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <a data-tooltip="Edit" data-direction="bottom" class="w-8 h-8 bg-green-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-green-500 dark:text-green-300 Edit hrmEdit font-size-16">Edit</span>
+                                </a>
+                                <a data-tooltip="Delete" data-direction="bottom" class="w-8 h-8 bg-red-100 dark:bg-slate-700 rounded-full flex items-center justify-center font-medium" href="#">
+                                    <span class="text-red-500 dark:text-red-300 Delete hrmEdit font-size-16">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-y-2 p-3">
+                            <div data-tooltip="Add" data-direction="right" class="w-20 h-20 flex items-center justify-center border-2 border-dashed dark:border-slate-600 rounded-full hover:bg-pink-100 dark:hover:bg-slate-700 hover:border-transparent group cursor-pointer">
+                                <i class="fa-solid fa-plus text-2xl text-gray-400 group-hover:text-pink-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="udf" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="UDF.html" width="100%" height="100%"></iframe>
+            </div>
+            <div id="assets" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="Assets.html" width="100%" height="100%"></iframe>
+            </div>
+            <div id="mylett" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="LetterDocument.html" width="100%" height="100%"></iframe>
+            </div>
+            <div id="target" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="Target.html" width="100%" height="100%"></iframe>
+            </div>
+            <div id="disciplinaryrecords" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="Target.html" width="100%" height="100%"></iframe>
+            </div>
+            <div id="visarequest" class="tab-content w-full mt-5 bg-white dark:bg-slate-800 rounded-lg shadow" style="display:none;">
+                <iframe id="myIframe" src="VisaRequest.html" width="100%" height="100%"></iframe>
+            </div>
+
+            <!-- Add more tab content here -->
+        </div>
+    </div>
+    <!-- The Right popup click of Editicon -->
+    <div class="popup-container fixed top-0 right-0 h-screen w-full md:w-3/5 lg:w-3/5 bg-white shadow-md hrmhidden">
+        <div class="header-bg w-full shadow grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 py-4 px-4 popup-header">
+            <div class="page-heading"><h1 class="sm:font-bold font-semibold">Personal Information</h1></div>
+            <div class="action-btn justify-self-end ">
+                <a class="text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 font-normal sm:font-medium rounded-full text-sm sm:px-3 px-2 lg:px-5 py-2 lg:py-2.5 text-center me-0 sm:me-2 mb-2" href="#!">Submit</a>
+                <a id="closeButton" onclick="closePopup()" href="#!" class="text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-normal sm:font-medium rounded-full text-sm sm:px-3 px-2 lg:px-5 py-2 lg:py-2.5 text-center me-0 sm:me-2 mb-2 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">Cancel</a>
+            </div>
+        </div>
+        <div class="iframe-wrapper w-full h-full pb-24 md:pb-16 lg:pb-16"></div>
+    </div>
+    <!-- Popup Container and Overlay -->
+    <div class="globaloverlay fixed top-0 right-0 h-screen w-screen backdrop-blur-sm bg-white/20 hidden z-[99]"></div>
+    <div class="overlay fixed top-0 right-0 h-screen w-screen backdrop-blur-sm bg-white/20 hidden z-[99]"></div>
+    <div id="global-loader" class="loader">
+        <div class="cube">
+            <div class="cube_item cube_x"></div>
+            <div class="cube_item cube_y"></div>
+            <div class="cube_item cube_y"></div>
+            <div class="cube_item cube_x"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="hrmcommon.js"></script>
+    <script>
+
+        /*--------------------------------------Tab javascript Start---------------------------------------------*/
+        const tabLinks = document.querySelectorAll('.tabs-nav li a');
+
+        // Define the mapping of tab content to external pages
+        const pageMap = {
+            'common': 'Employee_Main.html',
+            'udf': 'UDF.html',
+            'assets': 'Assets.html',
+            'mylett': 'LetterDocument.html',
+            'target': 'Target.html',
+            'disciplinaryrecords': 'Disciplinary-Records.html',
+            'visarequest': 'VisaRequest.html',
+        };
+
+        // Function to show the loader
+        function showLoader() {
+            const loader = document.getElementById('global-loader');
+            if (loader) {
+                loader.style.display = 'flex';
+            }
+        }
+
+        // Function to hide the loader with a delay
+        function hideLoader() {
+            const loader = document.getElementById('global-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500); // Delay hiding by 500ms (0.5 seconds)
+            }
+        }
+
+        // Function to adjust iframe height dynamically
+        function adjustIframeHeight(iframe) {
+            iframe.onload = function () {
+                const body = iframe.contentDocument.body;
+                if (body) {
+                    const height = body.scrollHeight + 100; // Add 100px to content height
+                    iframe.style.height = height + 'px'; // Set iframe height
+                }
+                hideLoader(); // Hide the loader after iframe content is loaded (with delay)
+            };
+        }
+
+        // Add event listener to each tab link
+        tabLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                // Show the loader when the tab is clicked
+                showLoader();
+
+                // Remove active class from all tabs
+                document.querySelectorAll('.tabs-nav li').forEach((tab) => {
+                    tab.classList.remove('tab-active');
+                });
+
+                // Add active class to the clicked tab
+                e.target.parentNode.classList.add('tab-active');
+
+                // Get the tab content ID using the data attribute
+                const tabContentId = e.target.dataset.tab; // Use data-tab attribute
+                const tabContent = document.getElementById(tabContentId);
+
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach((content) => {
+                    content.style.display = 'none';
+                });
+
+                // Display the clicked tab content
+                if (tabContent) {
+                    tabContent.style.display = 'block';
+                    hideLoader();
+                }
+
+                // Load the appropriate external page in the iframe based on the clicked tab
+                if (pageMap[tabContentId]) {
+                    const iframe = tabContent.querySelector('iframe'); // Find iframe inside tab content
+                    if (iframe) {
+                        iframe.src = pageMap[tabContentId]; // Load the respective HTML page
+                        adjustIframeHeight(iframe); // Adjust iframe height dynamically
+                    }
+                }
+            });
+        });
+
+        // Initialize: Show the first tab content
+        const firstTabLink = document.querySelector('.tabs-nav li a');
+        const firstTabContentId = firstTabLink.dataset.tab; // Get the correct id from dataset
+
+        if (firstTabContentId) {
+            const firstTabContent = document.getElementById(firstTabContentId);
+            if (firstTabContent) {
+                firstTabContent.style.display = 'block';
+                // Load the page for the first tab into the iframe
+                const iframe = firstTabContent.querySelector('iframe');
+                if (iframe && pageMap[firstTabContentId]) {
+                    iframe.src = pageMap[firstTabContentId];
+                    adjustIframeHeight(iframe); // Adjust iframe height dynamically for the first tab
+                    showLoader(); // Show the loader when loading the first tab
+                }
+            }
+        }
+        firstTabLink.parentNode.classList.add('tab-active');
+        /*--------------------------------------Tab javascript End---------------------------------------------*/
+
+        // Function to toggle popup and load a specific page inside an iframe
+        function togglePopup(pageUrl) {
+            const popup = document.querySelector(".popup-container:not(.hrmhidden)");
+            const overlay = document.querySelector(".overlay:not(.hidden)");
+
+            if (popup) {
+                // Close the currently open popup
+                popup.classList.add("hrmhidden");
+                if (overlay) overlay.classList.add("hidden");
+                document.body.style.overflow = "auto";
+            } else {
+                // Open new popup and load content in an iframe
+                const newPopup = document.querySelector(".popup-container.hrmhidden");
+                const newOverlay = document.querySelector(".overlay.hidden");
+
+                if (newPopup) {
+                    // Clear previous content in the iframe-wrapper
+                    const iframeWrapper = newPopup.querySelector(".iframe-wrapper");
+                    iframeWrapper.innerHTML = ''; // Clear previous content
+
+                    // Create an iframe and set its source to the pageUrl
+                    const iframe = document.createElement('iframe');
+                    iframe.src = pageUrl;
+                    iframe.className = "w-full h-full";  // Adjust the classes as needed for styling
+                    iframe.onload = function () {
+                        // Optional: Any actions after the iframe loads
+                    };
+
+                    // Append the iframe to the iframe-wrapper
+                    iframeWrapper.appendChild(iframe); // Add iframe to popup
+
+                    // Show popup and overlay
+                    newPopup.classList.remove("hrmhidden");
+                    newOverlay.classList.remove("hidden");
+                    document.body.style.overflow = "hidden";
+                }
+            }
+        }
+
+        // Attach click event listeners to all buttons
+        document.querySelectorAll('button[data-page]').forEach(button => {
+            button.addEventListener('click', function () {
+                const pageUrl = this.getAttribute('data-page'); // Get the page URL from data-page
+                togglePopup(pageUrl); // Load the specified page inside iframe
+            });
+        });
+
+        // Function to close the popup
+        function closePopup() {
+            const popup = document.querySelector(".popup-container:not(.hrmhidden)");
+            const overlay = document.querySelector(".overlay");
+
+            if (popup) {
+                popup.classList.add("hrmhidden");
+            }
+            if (overlay) {
+                overlay.classList.add("hidden");
+            }
+            document.body.style.overflow = "auto";
+        }
+
+        //tab open in mobile
+        document.addEventListener('click', function (event) {
+            if (window.matchMedia("(max-width: 1000px)").matches) {
+                // Toggle expanded class when clicking #hrm-information
+                if (event.target && event.target.id === 'hrm-information') {
+                    document.querySelector('.hrm-menulist-mbar').classList.toggle('expanded');
+                }
+
+                // Remove expanded class when clicking on any <li> inside .hrm-menulist-mbar
+                if (event.target.closest('.hrm-li')) {
+                    document.querySelector('.hrm-menulist-mbar').classList.remove('expanded');
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

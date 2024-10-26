@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="../view/hrmcommon.css" rel="stylesheet" />
+    <title>Other Information</title>
+</head>
+<body class="bg-white">
+    <div class="w-full flex flex-col">
+        <div class="main-container flex-col flex justify-start px-4 items-center w-full">
+            <div class="grid w-full py-4 border-b grid-cols-1 gap-4 border-b sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div class="flex flex-col gap-y-2">
+                    <label for="PassportPlace" class="w-full">Select Specification<i class="mandatory"></i></label>
+                    <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <div class="flex flex-col justify-start gap-2">
+                    <label for="employee-status" class="w-full">Employee Status</label>
+                    <input type="date" id="employee-status" name="employee-status" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+                <div class="flex flex-col justify-start gap-2">
+                    <label for="last-reporting-day" class="w-full">Last Reporting Day</label>
+                    <input type="date" id="last-reporting-day" name="last-reporting-day" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+            </div>
+
+
+            <div class="grid w-full py-4 border-b">
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Checkbox Section -->
+                    <!-- Gratuity Scheme and Date of Entry -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+                        <div class="flex items-center space-x-2">
+                            <input id="accept" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                            <label for="accept" class="text-sm font-medium text-gray-900">Gratuity Scheme Applicable</label>
+                        </div>
+
+                        <div class="flex flex-col gap-y-2 ">
+                            <label for="PassportPlace" class="w-full">
+                                Select Gratuity Scheme <i class="mandatory"></i>
+                            </label>
+                            <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                                <option selected="">Please Select</option>
+                                <option value="Rupay">Rupay</option>
+                                <option value="Credit">Credit Cards</option>
+                                <option value="Debit">Debit Cards</option>
+                                <option value="Bank">Bank Transfer</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Date of Entry in Gratuity Scheme -->
+                        <div class="flex flex-col gap-2">
+                            <label for="birthday" class="">Date Of Entry In Gratuity Scheme</label>
+                            <input type="date" id="birthday" name="birthday" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                        </div>
+
+                        <!-- Gratuity Trust ID -->
+                        <div class=" flex flex-col gap-2">
+                            <label for="gratuity-trust-id" class="w-full">Gratuity Trust ID</label>
+                            <input type="text" id="gratuity-trust-id" name="gratuity-trust-id" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-4 border-b">
+
+                <!-- Checkbox Section -->
+                <div class="flex items-center space-x-2">
+                    <input id="accept" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                    <label for="accept" class="text-sm font-medium text-gray-900">SA Scheme Applicable</label>
+                </div>
+
+                <div class="flex flex-col gap-y-2">
+                    <label for="PassportPlace" class="w-full">Select SA Scheme <i class="mandatory"></i></label>
+                    <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+                <!-- Date of Entry in SA Scheme -->
+                <div class="flex flex-col gap-2">
+                    <label for="birthday" class="w-full">Date Of Entry In SA Scheme</label>
+                    <input type="date" id="birthday" name="birthday" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+            </div>
+
+
+            <div class="flex flex-col items-center justify-start w-full py-4 border-b gap-2">
+                <div class="flex flex-col justify-start items-start w-full gap-y-4">
+                    <div class="flex items-center space-x-2">
+                        <input id="accept"
+                               type="checkbox"
+                               class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                        <label for="accept" class="text-sm font-medium text-gray-900">Employee on Contract</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-4 border-b">
+
+                <!-- Checkbox Section -->
+                <div class="flex items-center space-x-2">
+                    <input id="accept"
+                           type="checkbox"
+                           class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                    <label for="accept" class="text-sm font-medium text-gray-900">Enable Auto Increment</label>
+                </div>
+
+                <!-- Auto Increment Fields -->
+
+                <div class="flex flex-col justify-start gap-2 w-full">
+                    <label for="employeeName" class="w-full">Auto increment every</label>
+                    <input type="text" id="employeeName" name="employeeName" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col justify-start gap-2 w-full">
+                    <label for="birthday" class="w-full">Month starting from date</label>
+                    <input type="date" id="birthday" name="birthday" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+
+            </div>
+
+
+            <div class="grid gap-4 w-full py-4 border-b">
+                <div class="grid grid-cols-1 gap-y-4">
+                    <!-- Weekly Off Override Section -->
+                    <div class="flex items-center space-x-2">
+                        <input id="accept"
+                               type="checkbox"
+                               class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                        <label for="accept" class="text-sm font-medium text-gray-900">Weekly Off Override</label>
+                    </div>
+
+                    <!-- Days of the Week Checkboxes -->
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-6">
+                        <div class="flex items-center space-x-2">
+                            <input id="sunday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="sunday" class="text-sm font-medium text-gray-900">Sunday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="monday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="monday" class="text-sm font-medium text-gray-900">Monday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="tuesday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="tuesday" class="text-sm font-medium text-gray-900">Tuesday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="wednesday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="wednesday" class="text-sm font-medium text-gray-900">Wednesday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="thursday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="thursday" class="text-sm font-medium text-gray-900">Thursday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="friday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="friday" class="text-sm font-medium text-gray-900">Friday</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input id="saturday"
+                                   type="checkbox"
+                                   class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2" />
+                            <label for="saturday" class="text-sm font-medium text-gray-900">Saturday</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid gap-4 w-full py-4 border-b">
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-6">
+                    <!-- Override Notice Period Checkbox -->
+                    <div class="flex items-center space-x-2">
+                        <input id="overrideNoticePeriod" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                        <label for="overrideNoticePeriod" class="text-sm font-medium text-gray-900">Override Notice Period</label>
+                    </div>
+
+                    <!-- Auto Increment Field -->
+                    <div class="flex flex-col justify-start gap-2 w-full">
+                        <label for="employeeName" class="w-full">Notice Period (In Days)</label>
+                        <input type="text" id="employeeName" name="employeeName" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-6 border-b">
+                <!-- Override Grade Wise Checkbox -->
+                <div class="flex items-center space-x-2">
+                    <input id="overrideGradeWise" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                    <label for="overrideGradeWise" class="text-sm font-medium text-gray-900">Override Grade Wise</label>
+                </div>
+
+                <!-- Payroll Calculation Basis Dropdown -->
+                <div class="flex flex-col gap-y-2">
+                    <label for="PassportPlace" class="w-full">Payroll Calculation Basis <i class="mandatory"></i></label>
+                    <select id="PassportPlace" class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="Credit">Credit Cards</option>
+                        <option value="Debit">Debit Cards</option>
+                        <option value="Bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+
+
+
+                <!-- Override Grade Wise OT Checkbox -->
+                <div class="flex items-center space-x-2">
+                    <input id="overrideGradeWiseOT" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                    <label for="overrideGradeWiseOT" class="text-sm font-medium text-gray-900">Override Grade Wise OT</label>
+                </div>
+
+                <!-- Rate Per Hour Input -->
+                <div class="flex flex-col gap-2 w-full ">
+                    <label for="ratePerHour" class="text-sm font-medium text-gray-900">Rate Per Hour</label>
+                    <input type="text" id="ratePerHour" name="ratePerHour" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+
+            </div>
+
+
+            <div class="grid w-full grid-cols-1 gap-4 py-4 border-b sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div class="flex flex-col gap-2">
+                    <label for="ticketNo" class="w-full">Ticket No</label>
+                    <input type="text" id="ticketNo" name="ticketNo" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="exportCode" class="w-full">Export Code</label>
+                    <input type="text" id="exportCode" name="exportCode" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="swapCardNo" class="w-full">Swap Card No</label>
+                    <input type="text" id="swapCardNo" name="swapCardNo" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="employeeGroupCode" class="w-full">Employee Group Code</label>
+                    <input type="text" id="employeeGroupCode" name="employeeGroupCode" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="tempPeriod" class="w-full">Temp Period in Months</label>
+                    <input type="text" id="tempPeriod" name="tempPeriod" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="trainingMonths" class="w-full">Training Months</label>
+                    <input type="text" id="trainingMonths" name="trainingMonths" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="employeeOtherInfo" class="w-full">Employee Other Information</label>
+                    <input type="text" id="employeeOtherInfo" name="employeeOtherInfo" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex gap-2 items-center mt-5">
+                    <input id="applicableForTDS" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                    <label for="applicableForTDS" class="text-sm font-medium text-gray-900">Applicable for TDS module</label>
+                </div>
+                <div class="flex gap-2 items-center mt-5">
+                    <input id="freezeSalary" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+                    <label for="freezeSalary" class="text-sm font-medium text-gray-900">Freeze Salary</label>
+                </div>
+                <div class="flex flex-col gap-2 ">
+                    <label for="freezeDate" class="w-full">Freeze Date</label>
+                    <input type="date" id="freezeDate" name="freezeDate" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="workLocationAddress">Freeze Reason</label>
+                    <textarea id="workLocationAddress" name="workLocationAddress" rows="1" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

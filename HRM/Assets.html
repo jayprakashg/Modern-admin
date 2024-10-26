@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Assets</title>
+</head>
+<body>
+<style>
+.active-tab:nth-child(1) {
+    border-bottom: 5px solid #ef4444;
+}
+.active-tab:nth-child(2) {
+    border-bottom: 5px solid #10b981;
+}
+</style>
+<div class="flex flex-col">
+    <div class="flex flex-row p-4 gap-y-3 md:gap-x-3 lg:gap-x-3 flex-wrap">
+        <div id="assetIssuedTab" onclick="showTab('assetIssuedContent', 'assetIssuedTab')" class="w-full md:w-auto lg:w-auto flex justify-center items-center py-2 px-6 h-10 bg-red-400 border-b-4 border-red-400 rounded-lg hover:bg-red-500 cursor-pointer">
+            <h1>Asset Issued</h1>
+        </div>
+        <div id="assetReturnedTab" onclick="showTab('assetReturnedContent', 'assetReturnedTab')" class="w-full md:w-auto lg:w-auto flex justify-center items-center py-3 px-6 h-10 bg-green-400 border-b-4 border-green-400 rounded-lg hover:bg-green-500 cursor-pointer">
+            <h1>Asset Returned</h1>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4">
+            <!-- Asset Issued Content -->
+            <div id="assetIssuedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of issue :</h1>
+                    <span class="text-sm flex-grow text-left">02-04-2024</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Balance :</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+            <div id="assetIssuedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of issue :</h1>
+                    <span class="text-sm flex-grow text-left">02-04-2024</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Balance :</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+            <div id="assetIssuedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of issue :</h1>
+                    <span class="text-sm flex-grow text-left">02-04-2024</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Balance :</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+            <div id="assetIssuedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of issue :</h1>
+                    <span class="text-sm flex-grow text-left">02-04-2024</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Balance :</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+            <div id="assetIssuedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of issue :</h1>
+                    <span class="text-sm flex-grow text-left">02-04-2024</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Balance :</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+        
+            <!-- Asset Returned Content -->
+            <div id="assetReturnedContent" class="grid grid-cols-1 rounded-md border gap-y-2 p-3 border-l-4 hover:shadow-md hidden">
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Asset Code :</h1>
+                    <span class="text-sm flex-grow text-left break-all">AC001</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Date of Returning:</h1>
+                    <span class="text-sm flex-grow text-left"></span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Name :</h1>
+                    <span class="text-sm flex-grow text-left break-all">HVUJYB</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity issued :</h1>
+                    <span class="text-sm flex-grow text-left break-all">2</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Total Damages Worth:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+                <div class="grid grid-cols-2 w-full">
+                    <h1 class="w-49 text-gray-600 text-xs">Quantity Return:</h1>
+                    <span class="text-sm flex-grow text-left break-all">1</span>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    function showTab(contentId, tabId) {
+        // Hide both content divs
+        document.getElementById('assetIssuedContent').classList.add('hidden');
+        document.getElementById('assetReturnedContent').classList.add('hidden');
+
+        
+        // Remove active state from both tabs
+        document.getElementById('assetIssuedTab').classList.remove('active-tab');
+        document.getElementById('assetReturnedTab').classList.remove('active-tab');
+
+        // Show the selected content div
+        document.getElementById(contentId).classList.remove('hidden');
+
+        // Add active state to the selected tab
+        document.getElementById(tabId).classList.add('active-tab');
+    }
+
+    // Initialize with the first tab active
+    showTab('assetIssuedContent', 'assetIssuedTab');
+</script>
+
+</body>
+</html>

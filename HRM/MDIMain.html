@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico?1" />
+	<link href="hrmcommon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home Page</title>
+    <style type="text/css">
+       html body {background-color:#fff;}
+		.div-flex:hover {
+		    background-image: radial-gradient(at bottom right, #2196f38a 8%, transparent 64%);
+		}
+        .dark .div-flex:hover {
+            background-image: radial-gradient(at bottom right, #083d62 8%, transparent 64%);
+        }
+        .content-div {
+        min-height: 130px;
+        }
+		.maxwidth {max-width: 1130px; margin: auto;}
+        .hrm-blogo .back-to-home, .search-user-div .empl-search-box {
+            display:none;
+        }
+	</style>
+</head>
+<body class="dark:bg-slate-900">
+    <div class="hrm-header shadow relative dark:bg-slate-700">
+            <div class="hrm-blogo">
+                <img class="hrm-logo" src="./img/hrmlogo.png" title="HRMTHread Logo">
+                <a href="#!" data-tooltip="Back to home" data-direction="bottom" class="back-to-home w-7 h-7 flex items-center justify-center relative shadow rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 backhome font-size-16 dark:text-slate-400">
+                </a>
+            </div>
+            <div class="flex items-center search-user-div">
+                <div class="emp-search ml-2" id="search-div">
+                    <div class="empl-search-box flex md:w-full lg:w-full bg-white dark:bg-slate-600 emp-search-bar shadow rounded-3xl">
+                        <input type="text" name="" id="searchInput" placeholder="Employee search..." onclick="ShowList()">
+                        <span id="search-cicon" data-tooltip="Search" data-direction="right" class="flex items-center justify-center w-12 hrm-search cursor-ponter cursor-pointer search font-size-16 dark:text-slate-400"></span>
+                    </div>
+                    <div class="emp-list w-full bg-white dark:bg-slate-600 absolute rounded-xl top-9 shadow z-[99]" id="empList">
+                        <ul>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Jay prakash</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Dhruv Parmar</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                            <li class="border-b dark:border-slate-500 p-2 flex items-center justify-center">
+                                <div class="emp-name dark:text-white"><p>Vishwajeet</p></div>
+                                <div class="emp-links">
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Attendance</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">jxikbbasiubcisdui</a>
+                                    <a href="#!" class="bg-gray-200 text-gray-800 dark:bg-slate-500 dark:hover:bg-slate-700 dark:text-slate-300 p-1 rounded-full hover:bg-gray-300">Leave</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="user-option-right flex items-center gap-2 ml-2">
+                    <a id="notifications" data-tooltip="Notifications" data-direction="bottom" class="notify bell w-7 h-7 flex items-center justify-center relative shadow rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 font-size-16 dark:text-slate-400" href="#!">
+                        <span class="w-1.5 h-1.5 flex bg-green-600 rounded-full absolute top-2 right-1.5"></span>
+                    </a>
+                    <a id="UserOption" data-tooltip="User" data-direction="bottom" class="hrm-user-option w-7 h-7 flex items-center justify-center relative shadow-md rounded-2xl bg-white dark:bg-slate-600 hover:text-pink-500 font-size-16 dark:text-slate-400 border dark:border-slate-600" onclick="" href="#!">
+                        <img class="rounded-full" src="./img/user-pic.jpg" alt="Profile pic">
+                    </a>
+                </div>
+                <!--User Profile section-->
+                <div id="UserWrap" class="profile-page fixed top-0 bg-white dark:bg-slate-900 shadow-lg h-full">
+                    <section class="relative block h-60">
+                        <a id="userhide" href="#!" class="userwrapcd text-sm text-gray-300 hover:text-gray-500 absolute top-2 left-2 closed z-10"></a>
+                        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
+          ">
+                            <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+                        </div>
+                    </section>
+                    <section class="relative pt-16 pb-0">
+                        <div class="container mx-auto px-2 lg:px-4">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white dark:bg-slate-900 w-full rounded-lg -mt-64">
+                                <div class="grid grid-cols-1">
+                                    <div class="w-full flex justify-center">
+                                        <div class="relative">
+                                            <img alt="..." src="./img/user-pic.jpg" style="max-width:70px;" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-8 -ml-18 lg:-ml-8">
+                                        </div>
+                                    </div>
+                                    <div class="w-full justify-center ">
+                                        <div class="flex py-4 px-4 mt-12">
+                                            <div class="user-info">
+                                                <h3 class="user-name text-lg font-semibold leading-normal text-blueGray-700 dark:text-white">
+                                                    Jenna Stones
+                                                </h3>
+                                                <div class="user-role text-sm leading-normal mt-0 text-blueGray-400 uppercase dark:text-slate-400">
+                                                    Programmer
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex py-4 px-2 lg:px-4 bg-gray-100 dark:bg-slate-800">
+                                            <div class="usermoredetail" id="UserMoreDetails">
+                                                <ul>
+                                                    <li><span id="lblEmployeeBranch" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Branch :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Mumbai</span></span></li>
+                                                    <li><span id="lblEmployeeGrade" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Grade :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">SA-04</span></span></li>
+                                                    <li><span id="lblEmployeeDepartment" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Department :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Development</span></span></li>
+                                                    <li><span id="lblEmployeeReporting" class="flex items-center defaultLabel"><span class="key text-sm dark:text-slate-400">Reporting :</span> <span class="val text-sm text-gray-700 pl-2 dark:text-slate-300">Pravin Umarao Rajput  </span></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex justify-center">
+                                        <div class="w-full flex items-center justify-between py-6 px-3 mt-0">
+                                            <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
+                                                Switch To Old
+                                            </button>
+                                            <div class="theme-bg text-2xl" title="Theme">
+                                                <div class="flex flex-row justify-between toggle">
+                                                    <label for="dark-toggle" class="flex items-center cursor-pointer">
+                                                        <div class="relative">
+                                                            <input type="checkbox" name="dark-mode" id="dark-toggle" class="checkbox hidden">
+                                                            <div class="block border dark:border-slate-700 border-gray-700 w-14 h-8 rounded-full"></div>
+                                                            <div class="flex items-center justify-center dot absolute left-1 dark:left-7 top-1 dark:bg-slate-800 bg-gray-700 w-6 h-6 rounded-full transition theme-light theme-dark font-size-16 text-white dark:text-slate-400"></div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="close_sin grid">
+                                            <button id="logofflink" type="button" class="sign-out w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                Log Off <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                            </button>
+                                            <a class="forgotpass w-full py-2 underline cursor-pointer text-gray-700 dark:text-slate-400 text-sm hover:text-pink-500" id="forgotPass">Change Password <i class="fa fa-key pl-2" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!---Notification section--->
+                <div id="notifywrap" class="notifywrapper max-w-sm mx-auto fixed top-0 bg-white dark:bg-slate-900 shadow-lg h-full z-[100]">
+                    <div class="flex items-center justify-between p-4 shadow dark:shadow-lg bg-white dark:bg-slate-800 w-full absolute top-0 right-0 z-[99]">
+                        <h2 class="text-lg font-semibold flex items-center gap-2 dark:text-white">Notifications <span class="flex items-center justify-center w-8 h-8 rounded-full text-sm text-gray-500 dark:text-slate-400 bg-gray-100 dark:bg-slate-700 align-middle">2</span></h2>
+                        <a id="notifyclose" href="#!" class="notifybtn closed text-gray-400 dark:text-slate-400 hover:text-gray-500"></a>
+                    </div>
+                    <div class="divide-y dark:divide-slate-700 h-lvh max-h-max overflow-auto pt-16">
+                        <!-- Notification 1 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Fleur</strong> commented in <span class="text-pink-500">Dashboard 2.0</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 3:12 PM - 2 hours ago</p>
+                                <p class="mt-2 text-sm dark:text-slate-400 bg-gray-100 dark:bg-slate-700 p-2 rounded-lg">Really love this approach. I think this is the best solution for the document sync issue.</p>
+                            </div>
+                        </div>
+                        <!-- Notification 2 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Lily-Rose</strong> followed you</p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 3:04 PM - 2 hours ago</p>
+                            </div>
+                        </div>
+                        <!-- Notification 3 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Julius</strong> invited you to <span class="text-pink-500">Blog design</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 2:22 PM - 3 hours ago</p>
+                                <div class="mt-2 flex space-x-2">
+                                    <button class="px-3 py-1 bg-pink-500 text-white text-sm rounded-lg">Accept</button>
+                                    <button class="px-3 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-400 text-sm rounded-lg">Decline</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Notification 4 -->
+                        <div class="flex items-start space-x-4 p-4">
+                            <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex-1">
+                                <p class="text-sm dark:text-slate-400"><strong class="dark:text-slate-300">Adrianna</strong> shared a file in <span class="text-pink-500">Dashboard 2.0</span></p>
+                                <p class="text-xs text-gray-500 dark:text-slate-500">Friday 1:40 PM - 4 hours ago</p>
+                                <div class="mt-2 flex items-center space-x-2">
+                                    <p class="text-sm dark:text-slate-400">Prototype recording 01.mp4</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More notifications here... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="maxwidth">
+        <div class="hrm-main grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-8 py-4 mt-0 lg:mt-5">
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px] cursor-pointer" onclick="AddLeaveApplication('RI_OrgMapping_View.aspx?&PgKey=971&lvl=1');">
+                    <img src="img/on-boarding.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">On Boarding</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/recruitment.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Recruitment</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px] cursor-pointer" onclick="AddLeaveApplication('OrganisationChartVertical_View.aspx?RepType=Emp&ShowDesg=0&ReportingTypeId=1&PageMode=View&IncludeExit=1');">
+                    <img src="img/org-chart.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Org Structure</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/dashboard.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Dashboard</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px] cursor-pointer" onclick="AddLeaveApplication('Employee_Main.html')">
+                    <img src="img/employees.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Employee</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px] cursor-pointer" onclick="AddLeaveApplication('WF_LA.aspx?&PageType=V&PgKey=691&lvl=1');">
+                    <img src="img/attendance.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Attendance</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px] cursor-pointer" onclick="AddLeaveApplication('WF_LA.aspx?&PageType=V&PgKey=691&lvl=1');">
+                    <img src="img/leave.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Leave</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/payroll.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Payroll</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/incomtax.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Income Tax</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/time-sheet.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Time Sheet</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/pms.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">PMS</h3>
+                </div>
+            </div>
+            <div class="div-flex rounded-lg shadow text-center bg-white dark:bg-slate-800">
+                <div class="content-div w-full p-5 inline-block min-h-[129px]">
+                    <img src="img/training.png" class="w-12 h-12 mx-auto">
+                    <h3 class="text-sm uppercase text-gray-800 dark:text-slate-400 mt-2 font-medium">Training</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="client-logo absolute left-2">
+        <img src="img/AssetLogo.png" class="w-24 opacity-50">
+    </div>
+
+    <div class="globaloverlay fixed top-0 right-0 h-screen w-screen backdrop-blur-sm bg-white/20 hidden z-[99]"></div>
+    <div class="overlay fixed top-0 right-0 h-screen w-screen backdrop-blur-sm bg-white/20 hidden z-[99]"></div>
+	<script src="hrmcommon.js"></script>
+	<script>
+
+        function AddLeaveApplication(newurl) {
+            var screenWidth = window.screen.availWidth;
+            var screenHeight = window.screen.availHeight;
+            var windowFeatures = `width=${screenWidth},height=${screenHeight},top=0,left=0,fullscreen=yes`;
+
+            window.location.href = newurl;
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

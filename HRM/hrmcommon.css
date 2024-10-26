@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font/fontawesome.eot?v=4.7.0');
+    src: url('./font/fontawesome.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('./font/fontawesome.woff2?v=4.7.0') format('woff2'), url('./font/fontawesome.woff?v=4.7.0') format('woff'), url('./font/fontawesome.ttf?v=4.7.0') format('truetype'), url('./font/fontawesome.svg?v=4.7.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font/fa-light-300.woff2?v=6.0.0') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font/fa-brands-400.woff2?v=6.0.0') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font/fa-regular-400.woff2?v=6.0.0') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font/fa-solid-900.woff2?v=6.0.0') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MaterialSymbols';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url('./font/MaterialIconFont.woff2?v=1.0.0') format('woff2');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    transition: all 0.4s ease;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #f1f5f7;
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+/*Header CSS*/
+.header-bg {
+    background-color: #E3F2FD;
+}
+/*Header CSS*/
+/*Tab Active css in Custome start*/
+.hrm-menulist-mbar .hrm-li a {
+    height: 100%;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.hrm-menulist-mbar .hrm-li.tab-active a {
+    background-color: #FCE4EC;
+}
+
+.dark .hrm-menulist-mbar .hrm-li.tab-active a {
+    background-color: #333f52;
+}
+
+.hrm-menulist-mbar .hrm-li.tab-active a {
+    color: #8b2055;
+    font-weight: 500;
+}
+
+.dark .hrm-menulist-mbar .hrm-li.tab-active a {
+    color: #ff92ab;
+}
+/*Tab Active css in Custome end*/
+
+/*Edit Icon Effect CSS*/
+.hrmEdit {
+    font-size: 0;
+}
+
+.ringEffect {
+    position: relative;
+    transition: all 0.2s;
+}
+
+    .ringEffect:hover {
+        transform: translateY(-3px);
+    }
+
+    .ringEffect:active {
+        transform: translateY(-1px);
+    }
+
+    .ringEffect::after {
+        content: "";
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+        background-color: #ecd3d3;
+    }
+
+    .ringEffect:hover::after {
+        transform: scaleX(1.6) scaleY(1.6);
+        opacity: 0;
+    }
+
+.EditGroup, .AddGroup {
+    display: none !important;
+}
+
+.activeClass .EditGroup, .activeClass .AddGroup {
+    display: flex !important;
+}
+/*Icon Effect CSS*/
+
+/*Material font start*/
+.dashboard:before {
+    display: inline-block;
+    font-family: 'MaterialSymbols';
+    font-size: 24px !important;
+    font-weight: 300;
+    font-style: normal;
+}
+/*Material font end*/
+
+/*FontAwesome fot start*/
+.hrm-menu-mbar:before, .Edit:before, .Delete:before, .Close:before, .Yescheck:before, .camera:before, .backhome:before, .search:before, .user:before,
+.caret-down:before, .humanresource:before, .UDF:before, .asset:before, .employee-remark:before, .late-management:before, .target-comm:before,
+.disciplinary:before, .visa-request:before, .calender:before, .menu-bar:before, .logout:before, .fa-plus:before, .ri-eye-line:before, .bell:before, .theme-light:before, .closed:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.font-size-16:before {
+    font-size: 16px;
+}
+.Edit:before {
+    content: "\f304";
+}
+
+.Delete:before {
+    content: "\f1f8";
+}
+
+.Close:before {
+    content: "\f00d";
+}
+
+.Yescheck:before {
+    content: "\f00c";
+}
+
+.hrm-menu-mbar:before {
+    content: "\f0c9";
+}
+
+.camera:before {
+    content: "\f030";
+}
+
+.backhome:before {
+    content: "\f015";
+}
+
+.search:before {
+    content: "\f002";
+}
+
+.user:before {
+    content: "\f007";
+}
+
+.dashboard:before {
+    content: "\e66b";
+}
+
+.caret-down:before {
+    content: "\f078";
+}
+
+.humanresource:before {
+    content: "\f672";
+}
+
+.UDF:before {
+    content: "\e1cf";
+}
+
+.asset:before {
+    content: "\e473";
+}
+
+.employee-remark:before {
+    content: "\f31c";
+}
+
+.late-management:before {
+    content: "\f017";
+}
+
+.target-comm:before {
+    content: "\f140";
+}
+
+.disciplinary:before {
+    content: "\e1da";
+}
+
+.visa-request:before {
+    content: "\f5b0";
+}
+
+.calender:before {
+    content: "\f073";
+}
+
+.menu-bar:before {
+    content: "\e0ae";
+    font-size: 23px;
+}
+
+.ri-menu-unfold-line:before {
+    content: '\f00d';
+}
+
+.logout:before {
+    content: "\f2f5";
+}
+
+.fa-plus:before {
+    content: "\2b";
+}
+.ri-eye-line:before {
+    content: "\f06e";
+    font-size: 14px;
+}
+.bell:before {
+    content: "\f0f3";
+}
+.theme-light:before {
+    content: "\e28f";
+}
+.dark .theme-dark:before {
+    content: "\f186";
+}
+.closed:before {
+    content: "\f00d";
+}
+/*FontAwesome font end*/
+/*Edit Button click Open popup and overlay css*/
+.popup-container {
+    transition: 1s;
+}
+.popup-container {
+    z-index: 100;
+}
+.dark .globaloverlay.bg-white\/20, .dark .overlay.bg-white\/20 {
+    background-color: rgb(31 41 59 / 8%);
+}
+.hrmslide-scroll {
+    overflow: overlay;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.hrmhidden {
+    right: -100% !important;
+}
+
+@media (max-width:480px) {
+    .hrm-emp-wrap {
+        flex-direction: column;
+        padding: 8px;
+        align-items: start !important;
+    }
+
+    .personalemailbrake {
+        white-space: normal;
+        word-break: break-all;
+    }
+}
+
+@media (max-width:376px) {
+    .hrm-info-current {
+        flex-direction: column;
+        align-items: start;
+        gap: 3px;
+    }
+
+    .popup-header {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+        .popup-header .justify-self-end {
+            justify-self: start;
+        }
+}
+/*Edit Button click Open popup and overlay css*/
+
+/*Loader CSS start*/
+#global-loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 9999;
+    background: #ffffff00;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.cube {
+    height: 60px;
+    width: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.cube_item {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in;
+}
+
+.cube_x {
+    background-color: #e61a23;
+    animation: animateLoaders 1s infinite;
+}
+
+.cube_y {
+    background-color: #006ca7;
+    animation: animateLoaders 1s 0.5s infinite;
+}
+
+@keyframes animateLoaders {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+/*Loader CSS end*/
+
+/*User Button CSS start*/
+.profile-page {
+    width: 300px;
+    right: -350px;
+    z-index: 991;
+}
+.notifywrapper {
+    right: -400px;
+}
+.profile-page.openuserpopup, .notifywrapper.notifywrapper-right {
+    right:0px;
+}
+.userwrapcd {display:none;}
+/*User Button CSS end*/
+/*Tab Action list open in mobile CSS start*/
+@media (max-width:1000px) {
+    .hrm-menu-mbar.hidden {
+        display: flex;
+        z-index: 9;
+    }
+
+    .hrm-menu-bg {
+        position: relative;
+        justify-content: end;
+    }
+
+    .hrm-menulist-mbar {
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        border-radius: 10px;
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        background-color: #fff;
+    }
+
+    .dark .hrm-menulist-mbar {
+        background-color: #334155;
+    }
+
+    .hrm-menulist-mbar.expanded {
+        display: flex;
+    }
+
+    .hrm-menulist-mbar li:not(.tab-active) {
+        display: none;
+    }
+
+    .hrm-menulist-mbar li.tab-active {
+        display: block;
+    }
+
+    .hrm-menulist-mbar.expanded li {
+        display: block;
+    }
+
+    .hrm-menulist-mbar.expanded li {
+        display: block;
+        border-bottom: 1px solid #fce7f3;
+    }
+
+    .dark .hrm-menulist-mbar.expanded li {
+        border-bottom: 1px solid #636974;
+    }
+
+    .hrm-menulist-mbar.expanded li:last-child {
+        border-bottom: 0;
+    }
+
+    .hrm-menulist-mbar .hrm-li.tab-active a {
+        border-bottom: none;
+        width: 100%;
+    }
+}
+/*Tab mobile CSS end*/
+
+/*Header Css strat*/
+.hrm-header {
+    width: 100%;
+    height: 43px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d3ecff;
+}
+
+.hrm-blogo {
+    display: flex;
+    align-items: center;
+}
+
+.hrm-header .hrm-logo {
+    width: 130px;
+}
+
+.search-user-div {
+    width: 60%;
+    justify-content: space-between;
+}
+
+.emp-search {
+    position: relative;
+    width: 330px;
+}
+
+    .emp-search input {
+        width: 100%;
+        height: 35px;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+        background: transparent;
+    }
+
+.hrm-blogo .back-to-home {
+    margin-left: 10px;
+}
+
+.emp-list {
+    display: none;
+    max-height: 230px;
+    overflow-y: scroll;
+}
+
+    .emp-list ul li {
+        list-style: none;
+        font-size: 14px;
+    }
+
+.emp-name {
+    width: 35%;
+}
+
+.emp-links {
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    font-size: 11px;
+    align-items: center;
+}
+
+    .emp-links a {
+        max-width: 80px;
+        height: fit-content;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+/*Header CSS end*/
+
+/*Input floating CSS start*/
+.hrmInput-float .border {
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-radius: 0;
+}
+
+.hrmInput-float .focus\:border-blue-500:focus, .hrmInput-float .focus\:ring-blue-500:focus, .hrmInput-float .focus\:ring-1:focus {
+    --tw-ring-color: rgb(255 255 255);
+}
+/*Input floating CSS end*/
+
+/*Toltip CSS*/
+
+.custom-tooltip {
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+    .custom-tooltip[data-direction="top"]:after, .custom-tooltip[data-direction="right"]:after, .custom-tooltip[data-direction="bottom"]:after, .custom-tooltip[data-direction="left"]:after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: rgb(17 24 39);
+        rotate: 45deg;
+        position: absolute;
+        margin: 0 auto;
+    }
+    .dark .custom-tooltip[data-direction="top"]:after, .dark .custom-tooltip[data-direction="right"]:after, .dark .custom-tooltip[data-direction="bottom"]:after, .dark .custom-tooltip[data-direction="left"]:after {
+    background: rgb(2 6 23);
+}
+    .custom-tooltip[data-direction="top"]:after {
+        bottom: -4px;
+        right: 0;
+        left: 0;
+    }
+
+    .custom-tooltip[data-direction="right"]:after {
+        left: -5px;
+        top: 13px;
+    }
+
+    .custom-tooltip[data-direction="bottom"]:after {
+        top: -4px;
+        right: 0;
+        left: 0;
+    }
+
+    .custom-tooltip[data-direction="left"]:after {
+        right: -5px;
+        top: 13px;
+    }
+
+/*Toltip css*/
+
+@media (max-width:1150px) {
+    .maxwidth {
+        width: 90%;
+    }
+}
+
+@media (max-width:767px) {
+    .div-flex {
+        flex: 29%;
+    }
+}
+
+@media (max-width:600px) {
+    .search-user-div {
+        width: auto;
+    }
+
+    .emp-search .empl-search-box {
+        width: 30px;
+        height: 30px;
+    }
+
+        .emp-search .empl-search-box input {
+            display: none;
+        }
+
+    .emp-search.active-search {
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        left: 0px;
+        z-index:9;
+    }
+
+    .active-search .empl-search-box {
+        width: 100%;
+        height: 35px;
+    }
+
+        .active-search .empl-search-box input {
+            display: block;
+        }
+
+    .emp-search {
+        width: auto;
+    }
+}
+
+@media (max-width:567px) {
+    .div-flex {
+    flex: 39%;
+    }
+
+    .hrm-header {
+    padding: 0 15px;
+    }
+
+    .hrm-header .hrm-logo {
+        width: 100px;
+    }
+}
+
+@media (max-width:400px) {
+
+    .div-flex {
+        flex: 100%;
+    }
+
+    .hrm-header {
+        padding: 0 10px;
+    }
+
+    .profile-page {
+        width: 90%;
+    }
+    .userwrapcd {
+        display: block;
+    }
+}
+@media (max-width:340px) {
+
+    .hrm-header .hrm-logo {
+        width: 90px;
+    }
+}

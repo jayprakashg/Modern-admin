@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Information</title>
+
+    <link href="../view/hrmcommon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="down bg-white dark:bg-slate-900">
+    <div class="Employee-main">
+        <div class="Employee-wrap">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 w-full">
+                <!-- Input Fields -->
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Title Name <i class="mandatory"></i></label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="first-name" class="w-full">First Name</label>
+                    <input type="text" id="first-name" name="first-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="middle-name" class="block text-gray-700">Middle Name</label>
+                    <input type="text" id="middle-name" name="middle-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="last-name" class="block text-gray-700">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="employee-code" class="block text-gray-700">Employee Code <span class="text-red-500">*</span></label>
+                    <input type="text" id="employee-code" name="employee-code" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="attendance-code" class="block text-gray-700">Attendance Code</label>
+                    <input type="text" id="attendance-code" name="attendance-code" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="father-name" class="block text-gray-700">Father Name</label>
+                    <input type="text" id="father-name" name="father-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="spouse-name" class="block text-gray-700">Spouse Name</label>
+                    <input type="text" id="spouse-name" name="spouse-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="official-email" class="block text-gray-700">Official Email</label>
+                    <input type="email" id="official-email" name="official-email" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="personal-email" class="block text-gray-700">Personal Email</label>
+                    <input type="email" id="personal-email" name="personal-email" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="aadhar-number" class="block text-gray-700">Aadhar Number</label>
+                    <input type="text" id="aadhar-number" name="aadhar-number" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 text-gray-900 sm:text-sm">
+                </div>
+            </div>
+
+
+            <div class="flex w-full flex-col p-4 border-b">
+                <label class="block text-gray-700">Gender</label>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <input type="radio" id="male" name="gender" value="male" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="male" class="ml-2 text-gray-900">Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="female" name="gender" value="female" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="female" class="ml-2 text-gray-900">Female</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="transgender" name="gender" value="transgender" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="transgender" class="ml-2 text-gray-900">Transgender</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="undeclared" name="gender" value="undeclared" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="undeclared" class="ml-2 text-gray-900">Undeclared</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4 border-b">
+                <div class="flex flex-col space-y-2">
+                    <label for="birthday" class="block text-gray-700">Birth Date <i class="text-red-500">*</i></label>
+                    <input type="date" id="birthday" name="birthday" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="joiningDate" class="block text-gray-700">Joining Date <i class="text-red-500">*</i></label>
+                    <input type="date" id="joiningDate" name="joiningDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="lastReappointmentDate" class="block text-gray-700">Last Reappointment Date</label>
+                    <input type="date" id="lastReappointmentDate" name="lastReappointmentDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="probationDate" class="block text-gray-700">Probation Date</label>
+                    <input type="date" id="probationDate" name="probationDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="traineeDate" class="block text-gray-700">Trainee Date</label>
+                    <input type="date" id="traineeDate" name="traineeDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="scheduledExitDate" class="block text-gray-700">Scheduled Exit Date</label>
+                    <input type="date" id="scheduledExitDate" name="scheduledExitDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="lastExitDate" class="block text-gray-700">Last Exit Date</label>
+                    <input type="date" id="lastExitDate" name="lastExitDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="exitDate" class="block text-gray-700">Exit Date</label>
+                    <div class="flex items-center space-x-2">
+                        <input type="date" id="exitDate" name="exitDate" class="p-2 w-full  border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                        <a href="#" class="text-pink-600 bg-gray-200 p-2.5 rounded-md hover:bg-gray-300 "><i class="ri-eye-line"></i></a>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="confirmationDate" class="block text-gray-700">Confirmation Date</label>
+                    <input type="date" id="confirmationDate" name="confirmationDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="scheduledConfirmationDate" class="block text-gray-700">Scheduled Confirmation Date</label>
+                    <input type="date" id="scheduledConfirmationDate" name="scheduledConfirmationDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+            </div>
+
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4 border-b">
+                <!-- Checkbox Section -->
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="checkbox1" name="contact" value="email" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="checkbox1" class="text-sm block text-gray-700 text-gray-900">PF Applicable</label>
+                </div>
+
+                <!-- EPF Joining Date -->
+                <div class="flex flex-col space-y-2">
+                    <label for="epfJoiningDate" class="block text-gray-700">EPF Joining Date</label>
+                    <input type="date" id="epfJoiningDate" name="epfJoiningDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- EPS Joining Date -->
+                <div class="flex flex-col space-y-2">
+                    <label for="epsJoiningDate" class="block text-gray-700">EPS Joining Date</label>
+                    <input type="date" id="epsJoiningDate" name="epsJoiningDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- EPS Exit Date -->
+                <div class="flex flex-col space-y-2">
+                    <label for="epsExitDate" class="block text-gray-700">EPS Exit Date</label>
+                    <input type="date" id="epsExitDate" name="epsExitDate" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- Pension Applicable -->
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="checkbox2" name="contact" value="email" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="checkbox2" class="text-sm block text-gray-700 text-gray-900">Pension Applicable</label>
+                </div>
+
+                <!-- PF No. -->
+                <div class="flex flex-col space-y-2">
+                    <label for="pfNo" class="block text-gray-700">PF No.</label>
+                    <input type="text" id="pfNo" name="pfNo" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- PF UAN -->
+                <div class="flex flex-col space-y-2">
+                    <label for="pfUAN" class="block text-gray-700">PF UAN</label>
+                    <input type="text" id="pfUAN" name="pfUAN" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- Prev Member ID -->
+                <div class="flex flex-col space-y-2">
+                    <label for="prevMemberID" class="block text-gray-700">Prev Member ID</label>
+                    <input type="text" id="prevMemberID" name="prevMemberID" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- ESIC Applicable -->
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="checkbox3" name="contact" value="email" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="checkbox3" class="text-sm block text-gray-700 text-gray-900">ESIC Applicable</label>
+                </div>
+
+                <!-- ESIC No. -->
+                <div class="flex flex-col space-y-2">
+                    <label for="esicNo" class="block text-gray-700">ESIC No.</label>
+                    <input type="text" id="esicNo" name="esicNo" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- PT Applicable -->
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="checkbox4" name="contact" value="email" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="checkbox4" class="text-sm block text-gray-700 text-gray-900">PT Applicable</label>
+                </div>
+
+                <!-- LWF Applicable -->
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="checkbox5" name="contact" value="email" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="checkbox5" class="text-sm block text-gray-700 text-gray-900">LWF Applicable</label>
+                </div>
+
+                <!-- PAN No. -->
+                <div class="flex flex-col space-y-2">
+                    <label for="panNo" class="block text-gray-700">PAN No.</label>
+                    <input type="text" id="panNo" name="panNo" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+
+                <!-- EPS No. -->
+                <div class="flex flex-col space-y-2">
+                    <label for="epsNo" class="block text-gray-700">EPS No.</label>
+                    <input type="text" id="epsNo" name="epsNo" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500">
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4 border-b">
+
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Employee Status</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">ABCD</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Designation1</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Test</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Branch 105</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Grade</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Unit</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Project78</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Location</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">state</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Profit Centre</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Test Ticket </label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">ABC Blog</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Cost Center</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">STRUCTURE</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">STRUCTURE Run</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Employee Category</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">EmployeeOTherMaster10</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">EmployeeOTherMaster14</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4 border-b">
+                <div class="flex items-end gap-1">
+                    <div class="w-full flex flex-col gap-3">
+                        <label for="PassportPlace" class="w-full">Reporting To</label>
+                        <select id="PassportPlace"
+                                class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                            <option selected="">Please Select</option>
+                            <option value="Rupay">Mr</option>
+                            <option value="Credit">Mrs</option>
+                            <option value="Debit">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-pink-600 bg-gray-200 p-2 rounded-md hover:bg-gray-300 ">
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Currency</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Calculation Table</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Attendance Year</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Cost Category</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">TimeSheet Team</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">ESS Role</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Default Shift</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <label for="PassportPlace" class="w-full">Punch Status</label>
+                    <select id="PassportPlace"
+                            class="bg-gray-50 h-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full p-2 shadow-sm sm:text-sm">
+
+                        <option selected="">Please Select</option>
+                        <option value="Rupay">Mr</option>
+                        <option value="Credit">Mrs</option>
+                        <option value="Debit">Prefer Not To Say</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

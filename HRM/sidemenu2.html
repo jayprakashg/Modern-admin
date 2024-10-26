@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+            .sidebar.close {
+                width: 55px;
+            }
+
+
+            .sidebar.close .logo-details .logo_name {
+                opacity: 0;
+            }
+            .sidebar.close .nav-links {
+                overflow: visible;
+            }
+
+            .sidebar .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+                .sidebar .nav-links li .icon-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .sidebar .nav-links li .icon-link .caret-down:before {
+                    font-size: 15px;
+                }
+               .sidebar.close .nav-links li .icon-link {
+                display: block
+                }
+                .sidebar .nav-links li i:before {
+                    font-size: 20px;
+                }
+
+            .sidebar .nav-links li.showMenu i.arrow {
+                transform: rotate(-180deg);
+            }
+
+            .sidebar.close .nav-links i.arrow {
+                display: none;
+            }
+                .sidebar .nav-links li a .link_name {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #afafaf;
+                    transition: all 0.4s ease;
+                }
+
+            .sidebar.close .nav-links li a .link_name {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .sidebar .nav-links li .sub-menu {
+                padding: 6px 6px 14px 80px;
+                margin-top: 0px;
+                /*background: #2e2e2e;*/
+                display: none;
+            }
+
+            .sidebar .nav-links li.showMenu .sub-menu {
+                display: block;
+            }
+
+        .close.sidebar .nav-links li .sub-menu a {
+            white-space: nowrap;
+        }
+
+        .sidebar .nav-links li .sub-menu a {
+            color: #c3c3c3;
+            font-size: 15px;
+            padding: 5px 0;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+            .sidebar .nav-links li .sub-menu a:hover {
+                opacity: 1;
+            }
+
+        .sidebar.close .nav-links li .sub-menu {
+            position: absolute;
+            left: 100%;
+            top: -10px;
+            margin-top: 0;
+            padding: 10px 20px;
+            border-radius: 0 6px 6px 0;
+            opacity: 0;
+            display: block;
+            pointer-events: none;
+            transition: 0s;
+        }
+
+        .sidebar.close .nav-links li:hover .sub-menu {
+            top: 0;
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+        }
+
+        .sidebar .nav-links li .sub-menu .link_name {
+            display: none;
+        }
+
+        .sidebar.close .nav-links li .sub-menu .link_name {
+            font-size: 14px;
+            opacity: 1;
+            display: block;
+        }
+
+        .sidebar .nav-links li .sub-menu.blank {
+            opacity: 1;
+            pointer-events: auto;
+            padding: 3px 20px 6px 16px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar .nav-links li:hover .sub-menu.blank {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sidebar .profile-details {
+            padding: 5px 0;
+        }
+
+        .sidebar.close .profile-details {
+            background: none;
+        }
+
+        .sidebar.close .profile-details {
+            width: 55px;
+        }
+
+        .sidebar .profile-details .profile-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .profile-details img {
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 0 4px 0 4px;
+            transition: all 0.5s ease;
+        }
+        .sidebar.close .profile-details img {
+            padding: 8px;
+        }
+        .sidebar .profile-details .profile_name,
+        .sidebar .profile-details .job {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .sidebar.close .profile-details i,
+        .sidebar.close .profile-details .profile_name,
+        .sidebar.close .profile-details .job {
+            display: none;
+        }
+        .sidebar .profile-details .job {
+            font-size: 12px;
+        }
+        .home-section {
+            position: relative;
+            background: #E4E9F7;
+            height: 100vh;
+            left: 260px;
+            width: calc(100% - 260px);
+            transition: all 0.5s ease;
+            padding: 12px;
+        }
+        .sidebar.close ~ .home-section {
+            left: 55px;
+            width: calc(100% - 55px);
+        }
+        .home-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .home-section .home-content .bx-menu,
+        .home-section .home-content .text {
+            color: #11101d;
+            font-size: 35px;
+        }
+
+        .home-section .home-content .bx-menu {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .home-section .home-content .text {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 400px) {
+                .sidebar.close {
+                    width: 55px;
+                }
+                .sidebar.close .profile-details {
+                    background: none;
+                }
+                .sidebar.close .profile-details {
+                    width: 55px;
+                }
+            .home-section {
+                left: 240px;
+                width: calc(100% - 240px);
+            }
+            .sidebar.close ~ .home-section {
+                left: 55px;
+                width: calc(100% - 55px);
+            }
+        }
+        .font-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar close fixed top-0 left-0 h-full w-[260px] bg-[#0a0a0a] z-[99] transition-all duration-500">
+        <div class="logo-details flex items-center h-[60px] w-full">
+            <i class='menu-bar open-menu-icon font-icon text-[30px] text-white h-[50px] min-w-[55px] text-center leading-[50px]'></i>
+            <span class="logo_name text-[22px] text-white font-semibold transition-opacity duration-300 delay-100">Side menu</span>
+        </div>
+        <ul class="nav-links h-full pb-[150px] overflow-auto">
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class='dashboard h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300'></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Dashboard</span>
+                    </a>
+                    <i class='leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]'></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a href="#">Dashboard 1</a></li>
+                    <li><a href="#">Dashboard 2</a></li>
+                    <li><a href="#">Dashboard 3</a></li>
+                </ul>
+            </li>
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class="user h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Employee Information</span>
+                    </a>
+                    <i class="leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]"></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">General Information</a></li>
+                    <li><a href="#">Other Information</a></li>
+                    <li><a href="#">Personal Information</a></li>
+                    <li><a href="#">KYC Detail</a></li>
+                    <li><a href="#">Payment Information</a></li>
+                    <li><a href="#">Upload Image</a></li>
+                    <li><a href="#">On Boarding</a></li>
+                    <li><a href="#">Employee Confirmation History</a></li>
+                </ul>
+            </li>
+            <li class="menu-item relative transition-all duration-400 hover:bg-slate-700">
+                <div class="icon-link flex items-center justify-between">
+                    <a href="#" class="flex items-center">
+                        <i class="humanresource h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                        <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Human Resource Information</span>
+                    </a>
+                    <i class="leading-[50px] text-center caret-down arrow h-[50px] min-w-[55px] text-[#afafaf]"></i>
+                </div>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Passport Vehicle</a></li>
+                    <li><a href="#">Qualification</a></li>
+                    <li><a href="#">Work Experience</a></li>
+                    <li><a href="#">Family Member</a></li>
+                    <li><a href="#">Hobbies</a></li>
+                    <li><a href="#">Achivements</a></li>
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Attachments</a></li>
+                    <li><a href="#">Vaccination Info</a></li>
+                    <li><a href="#">Employee Contract</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="UDF h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">UDF</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">UDF</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="asset h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Assets</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Assets</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="employee-remark h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Employee Remark</span>
+                </a>
+                <ul class="sub-menu bg-slate-700">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Employee Remark</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="late-management h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Late Managements and issuals</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Late Managements and issuals</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="target-comm h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Target/Commitments</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Target/Commitments</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="disciplinary h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Disciplinary Records</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Disciplinary Records</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="visa-request h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Visa Request</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Visa Request</a></li>
+                </ul>
+            </li>
+            <li class="relative transition-all duration-400 hover:bg-slate-700">
+                <a href="#" class="flex items-center">
+                    <i class="calender h-[50px] min-w-[55px] text-center leading-[50px] text-[#dfdfdf] text-[20px] cursor-pointer transition-all duration-300"></i>
+                    <span class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400">Calender</span>
+                </a>
+                <ul class="sub-menu bg-slate-700 blank">
+                    <li><a class="link_name text-[14px] font-normal text-[#afafaf] transition-all duration-400" href="#">Calender</a></li>
+                </ul>
+            </li>
+            <li class="profile-details fixed bottom-0 flex items-center justify-between p-3 w-[260px] transition-all duration-500 bg-slate-700">
+                <div class="profile-content flex items-center">
+                    <img src="./img/user-pic.jpg" alt="profileImg" class="h-[45px] w-[45px] object-cover rounded-lg bg-slate-700 transition-all duration-500">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name text-white text-[18px] font-semibold">Prem Shahi</div>
+                    <div class="job text-white text-[12px]">Web Designer</div>
+                </div>
+                <i class='logout leading-[50px] text-center h-[50px] min-w-[55px] text-[#afafaf]'></i>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

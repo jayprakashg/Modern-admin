@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Activities</title>
+</head>
+<body>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-4 w-full">
+        <div class="flex flex-col justify-start gap-2 w-full">
+            <label for="employeeName" class="w-full">Employee Code</label>
+            <input type="text" id="employeeName" name="employeeName" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex flex-col justify-start gap-2 w-full">
+            <label for="employeeName" class="w-full">Employee Name</label>
+            <input type="text" id="employeeName" name="employeeName" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex flex-col justify-start gap-2 w-full">
+            <label for="employeeName" class="w-full">Activity</label>
+            <input type="text" id="employeeName" name="employeeName" class="w-full  p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+        </div>
+        <div class="flex items-center space-x-2 mt-8">
+            <input id="accept" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2">
+            <label for="accept" class="text-sm font-medium text-gray-900">Completed</label>
+        </div>
+        <div class="flex flex-col justify-start gap-2">
+            <label for="last-reporting-day" class="w-full">Date Of Completion</label>
+            <input type="date" id="last-reporting-day" name="last-reporting-day" class="w-full p-2 h-10 border border-gray-300 rounded-md shadow-sm focus:ring-1 outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-sm">
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 mt-5 border-t">
+        <div class="grid grid-cols-1 rounded-md border gap-y-2 p-3">
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Notes: </h1>
+                <span class="text-sm flex-grow text-left">1</span>
+            </div>
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Date of Notes: </h1>
+                <span class="text-sm flex-grow text-left break-all">N/A</span>
+            </div>
+
+            <div class="flex space-x-2">
+                <a class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-green-500 Edit hrmEdit"><i class="fa-solid fa-pencil"></i></span>
+                </a>
+                <a class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-red-500 Delete hrmEdit"><i class="fa-solid fa-trash-can"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 rounded-md border gap-y-2 p-3">
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Notes: </h1>
+                <span class="text-sm flex-grow text-left">1</span>
+            </div>
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Date of Notes: </h1>
+                <span class="text-sm flex-grow text-left break-all">N/A</span>
+            </div>
+
+            <div class="flex space-x-2">
+                <a class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-green-500 Edit hrmEdit"><i class="fa-solid fa-pencil"></i></span>
+                </a>
+                <a class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-red-500 Delete hrmEdit"><i class="fa-solid fa-trash-can"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 rounded-md border gap-y-2 p-3">
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Notes: </h1>
+                <span class="text-sm flex-grow text-left">1</span>
+            </div>
+            <div class="grid grid-cols-2 w-full">
+                <h1 class="w-49 text-gray-600 text-xs">Date of Notes: </h1>
+                <span class="text-sm flex-grow text-left break-all">N/A</span>
+            </div>
+
+            <div class="flex space-x-2">
+                <a class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-green-500 Edit hrmEdit"><i class="fa-solid fa-pencil"></i></span>
+                </a>
+                <a class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center font-medium" href="#">
+                    <span class="text-red-500 Delete hrmEdit"><i class="fa-solid fa-trash-can"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
